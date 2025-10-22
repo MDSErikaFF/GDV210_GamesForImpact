@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://48and8s054y4"]
+
+[ext_resource type="Script" path="res://scripts/scripts/entities/Player/vacuum.gd" id="1_17hmc"]
+[ext_resource type="Texture2D" uid="uid://d2yrsemu8k8uj" path="res://icon.svg" id="1_n5jce"]
+
+[node name="Vacuum" type="Node2D"]
+script = ExtResource("1_17hmc")
+
+[node name="VacuumTexture" type="Sprite2D" parent="."]
+position = Vector2(0, 1)
+scale = Vector2(0.359375, 0.09375)
+texture = ExtResource("1_n5jce")
+offset = Vector2(64, -4)
+
+[node name="endPoint" type="Marker2D" parent="VacuumTexture"]
+position = Vector2(126, -8)
+scale = Vector2(1, 4)
+
+[node name="vacuumArea2D" type="Area2D" parent="VacuumTexture/endPoint"]
+position = Vector2(-62, 1)
+collision_layer = 49
+collision_mask = 49
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="VacuumTexture/endPoint/vacuumArea2D"]
+position = Vector2(63, 2)
+scale = Vector2(1.488, 1.363)
+polygon = PackedVector2Array(-1, -2, 127.834, -100.708, 129.356, 77.1148)
+
+[connection signal="area_entered" from="VacuumTexture/endPoint/vacuumArea2D" to="." method="_on_vacuum_area_2d_area_entered"]
