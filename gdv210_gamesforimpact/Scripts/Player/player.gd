@@ -1,11 +1,34 @@
 extends CharacterBody2D
 
+@export var speed = 400
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+@export var accel = 1500
 
+@export var friction = 600
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+var input = Vector2.ZERO
+
+var last_angle = 0.0;
+
+func _physics_process(delta):
+	get_input()
+	if input == Vector2.ZERO:
+		if velocity.length() > friction * delta:
+			velocity -= velocity.normalized() * friction * delta
+		else:
+			velocity = Vector2.ZERO
+	else:
+		velocity += input * accel * delta
+		velocity = velocity.limit_length(speed)
+		
+	if velocity.length() > 1:
+		last_angle = velocity.angle()
+		rotation = last_angle
+	else:
+		rotation = last_angle
+	move_and_slide()
+
+func get_input():
+	input.x = int(Input.is_action_pressed("Right")) - int(Input.is_action_pressed("Left"))
+	input.y = int(Input.is_action_pressed("Down")) - int(Input.is_action_pressed("Up"))
+	input = input.normalized()
