@@ -13,3 +13,16 @@ config_version=5
 config/name="GDV210_GamesForImpact"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GameManager="*res://scripts/scripts/global/GameManager.gd"
+
+[display]
+
+window/size/viewport_width=480
+window/size/viewport_height=270
+window/size/mode=3
+window/size/window_width_override=1920
+window/size/window_height_override=1080
+window/stretch/mode="canvas_items"
