@@ -1,34 +1,36 @@
-[gd_scene load_steps=4 format=3 uid="uid://bqdcw1280c2sh"]
+[gd_scene load_steps=5 format=3 uid="uid://bqdcw1280c2sh"]
 
 [ext_resource type="Texture2D" uid="uid://d2yrsemu8k8uj" path="res://icon.svg" id="1_fi5bh"]
-[ext_resource type="Script" path="res://scripts/scripts/entities/Player/player.gd" id="1_wl0f2"]
+[ext_resource type="Script" path="res://Scripts/entities/Player/player.gd" id="1_t8xw5"]
+[ext_resource type="PackedScene" uid="uid://48and8s054y4" path="res://Scenes/Player/Vacuum.tscn" id="3_l0fjh"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i54qc"]
-radius = 28.0
-height = 162.0
+radius = 12.0
+height = 56.0
 
 [node name="Player" type="CharacterBody2D"]
-script = ExtResource("1_wl0f2")
+script = ExtResource("1_t8xw5")
 
 [node name="Sprite2D3" type="Sprite2D" parent="."]
-position = Vector2(-18, -41)
-scale = Vector2(0.765625, 0.429687)
+position = Vector2(-6, -12)
+scale = Vector2(0.28125, 0.157844)
 texture = ExtResource("1_fi5bh")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(1.3125, 0.4375)
-texture = ExtResource("1_fi5bh")
-
-[node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(66, -1)
-scale = Vector2(0.546875, 0.554688)
+scale = Vector2(0.4375, 0.145833)
 texture = ExtResource("1_fi5bh")
 
 [node name="Sprite2D4" type="Sprite2D" parent="."]
-position = Vector2(66, -1)
-scale = Vector2(0.546875, 0.554688)
+position = Vector2(27, 0)
+scale = Vector2(0.140625, 0.142634)
 texture = ExtResource("1_fi5bh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_i54qc")
+
+[node name="Vacuum" parent="." instance=ExtResource("3_l0fjh")]
+position = Vector2(0, 4)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.4, 0.4)

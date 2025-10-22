@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name Player
 
 @export var speed = 400
 
@@ -21,10 +22,11 @@ func _physics_process(delta):
 		velocity += input * accel * delta
 		velocity = velocity.limit_length(speed)
 		
+	# updates the player's rotation acording to the velocity angle
 	if velocity.length() > 1:
 		last_angle = velocity.angle()
 		rotation = last_angle
-	else:
+	else: # when not moving, stay rotated at the last angle 
 		rotation = last_angle
 	move_and_slide()
 

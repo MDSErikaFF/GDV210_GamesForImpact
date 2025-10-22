@@ -1,0 +1,51 @@
+[gd_scene load_steps=3 format=3 uid="uid://hu7s8u6h06jo"]
+
+[ext_resource type="Theme" uid="uid://inxo6vyipgvi" path="res://Assets/Themes/ThemeUI.tres" id="1_tu5qf"]
+[ext_resource type="Script" path="res://UI/ui.gd" id="2_dviu8"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_tu5qf")
+script = ExtResource("2_dviu8")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.009
+anchor_right = 1.0
+anchor_bottom = 0.159
+offset_left = 4.32
+offset_right = -79.0
+offset_bottom = -17.93
+grow_horizontal = 2
+
+[node name="Panel" type="Panel" parent="UI/HBoxContainer"]
+custom_minimum_size = Vector2(94.995, 0)
+layout_mode = 2
+
+[node name="Label Trash Count" type="Label" parent="UI/HBoxContainer/Panel"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 4.0
+offset_right = 83.0
+offset_bottom = 27.0
+text = "Trash: ## / ##"
+
+[node name="Panel2" type="Panel" parent="UI/HBoxContainer"]
+custom_minimum_size = Vector2(87.335, 0)
+layout_mode = 2
+
+[node name="Label Shell Count" type="Label" parent="UI/HBoxContainer/Panel2"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 5.0
+offset_right = 82.0
+offset_bottom = 28.0
+text = "Shells: ## / ##"

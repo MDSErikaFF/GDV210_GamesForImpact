@@ -7,6 +7,9 @@ var VacuumMaxSizeLevel = 1.4
 var TrashCollected = 1
 var MaxTrashStorage = 10
 
+var ShellsCollected = 0;
+var MaxShells = 3;
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -14,5 +17,12 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	
+	if Input.is_action_just_pressed("Quit"): # quit out of the game 
+		get_tree().quit()
+	
+	
+	
+	
+	
  

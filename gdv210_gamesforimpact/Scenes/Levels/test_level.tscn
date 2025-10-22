@@ -1,0 +1,49 @@
+[gd_scene load_steps=4 format=3 uid="uid://5tlnhor62a8w"]
+
+[ext_resource type="PackedScene" uid="uid://bqdcw1280c2sh" path="res://Scenes/Player/Player.tscn" id="1_858xu"]
+[ext_resource type="PackedScene" uid="uid://hu7s8u6h06jo" path="res://UI/UI.tscn" id="2_1ccqb"]
+[ext_resource type="PackedScene" uid="uid://u1yc2j4db2v6" path="res://Scenes/Entities/trash.tscn" id="3_alwin"]
+
+[node name="TestLevel" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_858xu")]
+
+[node name="Trash Objects" type="Node2D" parent="."]
+
+[node name="Trash" parent="Trash Objects" instance=ExtResource("3_alwin")]
+position = Vector2(65, -140)
+
+[node name="Trash2" parent="Trash Objects" instance=ExtResource("3_alwin")]
+position = Vector2(120, -102)
+
+[node name="Trash5" parent="Trash Objects" instance=ExtResource("3_alwin")]
+position = Vector2(178, -54)
+
+[node name="Trash6" parent="Trash Objects" instance=ExtResource("3_alwin")]
+position = Vector2(240, -67)
+
+[node name="Trash3" parent="Trash Objects" instance=ExtResource("3_alwin")]
+position = Vector2(145, -158)
+
+[node name="Trash4" parent="Trash Objects" instance=ExtResource("3_alwin")]
+position = Vector2(206, -132)
+
+[node name="Trash7" parent="Trash Objects" instance=ExtResource("3_alwin")]
+position = Vector2(-382, 167)
+
+[node name="Trash8" parent="Trash Objects" instance=ExtResource("3_alwin")]
+position = Vector2(-282, 199)
+
+[node name="Trash9" parent="Trash Objects" instance=ExtResource("3_alwin")]
+position = Vector2(-370, 220)
+
+[node name="Trash10" parent="Trash Objects" instance=ExtResource("3_alwin")]
+position = Vector2(-278, 271)
+
+[node name="Trash11" parent="Trash Objects" instance=ExtResource("3_alwin")]
+position = Vector2(-371, 77)
+
+[node name="Trash12" parent="Trash Objects" instance=ExtResource("3_alwin")]
+position = Vector2(-316, 136)
+
+[node name="UI" parent="." instance=ExtResource("2_1ccqb")]

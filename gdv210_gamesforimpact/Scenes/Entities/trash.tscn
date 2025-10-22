@@ -1,14 +1,13 @@
 [gd_scene load_steps=4 format=3 uid="uid://u1yc2j4db2v6"]
 
-[ext_resource type="Script" path="res://scripts/scripts/entities/other/trash.gd" id="1_aoul7"]
 [ext_resource type="Texture2D" uid="uid://d2yrsemu8k8uj" path="res://icon.svg" id="1_h0vlg"]
+[ext_resource type="Script" path="res://Scripts/entities/other/trash.gd" id="1_i5cgn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_myspa"]
 radius = 22.0227
 
-[node name="Trash" type="CharacterBody2D" node_paths=PackedStringArray("TrashTexture")]
-script = ExtResource("1_aoul7")
-TrashTexture = NodePath("Icon")
+[node name="Trash" type="CharacterBody2D"]
+script = ExtResource("1_i5cgn")
 
 [node name="Icon" type="Sprite2D" parent="."]
 scale = Vector2(0.335938, 0.335938)
