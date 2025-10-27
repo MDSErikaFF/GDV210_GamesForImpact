@@ -9,6 +9,7 @@ func _ready():
 func _process(delta):
 	if Input.is_action_pressed("LeftClick"):
 		GameManager.CurrentlyVacuum = true
+		GameManager.targetVacuumMarker = $VacuumTexture/endPoint.global_position
 	else:
 		GameManager.CurrentlyVacuum = false
 	

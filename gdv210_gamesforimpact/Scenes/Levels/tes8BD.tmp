@@ -1,0 +1,115 @@
+[gd_scene load_steps=7 format=3 uid="uid://5tlnhor62a8w"]
+
+[ext_resource type="Script" path="res://Scripts/entities/Player/player.gd" id="1_rq5k2"]
+[ext_resource type="PackedScene" uid="uid://hu7s8u6h06jo" path="res://UI/UI.tscn" id="2_1ccqb"]
+[ext_resource type="Texture2D" uid="uid://d2yrsemu8k8uj" path="res://icon.svg" id="2_80l0f"]
+[ext_resource type="PackedScene" uid="uid://u1yc2j4db2v6" path="res://Scenes/Entities/trash.tscn" id="3_alwin"]
+[ext_resource type="Script" path="res://Scripts/entities/Player/vacuum.gd" id="3_k2hju"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i54qc"]
+radius = 12.0
+height = 56.0
+
+[node name="TestLevel" type="Node2D"]
+
+[node name="Player" type="CharacterBody2D" parent="."]
+script = ExtResource("1_rq5k2")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Player"]
+position = Vector2(-6, -12)
+scale = Vector2(0.28125, 0.157844)
+texture = ExtResource("2_80l0f")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+scale = Vector2(0.4375, 0.145833)
+texture = ExtResource("2_80l0f")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Player"]
+position = Vector2(27, 0)
+scale = Vector2(0.140625, 0.142634)
+texture = ExtResource("2_80l0f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_i54qc")
+
+[node name="Vacuum" type="Node2D" parent="Player"]
+position = Vector2(0, 4)
+script = ExtResource("3_k2hju")
+
+[node name="VacuumTexture" type="Sprite2D" parent="Player/Vacuum"]
+position = Vector2(0, 1)
+scale = Vector2(0.359375, 0.09375)
+texture = ExtResource("2_80l0f")
+offset = Vector2(64, -4)
+
+[node name="endPoint" type="Marker2D" parent="Player/Vacuum/VacuumTexture"]
+position = Vector2(126, -8)
+scale = Vector2(1, 4)
+
+[node name="vacuumArea2D" type="Area2D" parent="Player/Vacuum/VacuumTexture/endPoint"]
+position = Vector2(-62, 1)
+collision_layer = 49
+collision_mask = 49
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Player/Vacuum/VacuumTexture/endPoint/vacuumArea2D"]
+position = Vector2(63, 2)
+scale = Vector2(1.488, 1.363)
+polygon = PackedVector2Array(-1, -2, 127.834, -100.708, 129.356, 77.1148)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(0.4, 0.4)
+
+[node name="Trash Objects" type="Node2D" parent="."]
+
+[node name="Trash" parent="Trash Objects" node_paths=PackedStringArray("target") instance=ExtResource("3_alwin")]
+position = Vector2(65, -140)
+target = NodePath("../../Player/Vacuum/VacuumTexture/endPoint")
+
+[node name="Trash2" parent="Trash Objects" node_paths=PackedStringArray("target") instance=ExtResource("3_alwin")]
+position = Vector2(120, -102)
+target = NodePath("../../Player/Vacuum/VacuumTexture/endPoint")
+
+[node name="Trash5" parent="Trash Objects" node_paths=PackedStringArray("target") instance=ExtResource("3_alwin")]
+position = Vector2(178, -54)
+target = NodePath("../../Player/Vacuum/VacuumTexture/endPoint")
+
+[node name="Trash6" parent="Trash Objects" node_paths=PackedStringArray("target") instance=ExtResource("3_alwin")]
+position = Vector2(240, -67)
+target = NodePath("../../Player/Vacuum/VacuumTexture/endPoint")
+
+[node name="Trash3" parent="Trash Objects" node_paths=PackedStringArray("target") instance=ExtResource("3_alwin")]
+position = Vector2(145, -158)
+target = NodePath("../../Player/Vacuum/VacuumTexture/endPoint")
+
+[node name="Trash4" parent="Trash Objects" node_paths=PackedStringArray("target") instance=ExtResource("3_alwin")]
+position = Vector2(206, -132)
+target = NodePath("../../Player/Vacuum/VacuumTexture/endPoint")
+
+[node name="Trash7" parent="Trash Objects" node_paths=PackedStringArray("target") instance=ExtResource("3_alwin")]
+position = Vector2(-382, 167)
+target = NodePath("../../Player/Vacuum/VacuumTexture/endPoint")
+
+[node name="Trash8" parent="Trash Objects" node_paths=PackedStringArray("target") instance=ExtResource("3_alwin")]
+position = Vector2(-282, 199)
+target = NodePath("../../Player/Vacuum/VacuumTexture/endPoint")
+
+[node name="Trash9" parent="Trash Objects" node_paths=PackedStringArray("target") instance=ExtResource("3_alwin")]
+position = Vector2(-370, 220)
+target = NodePath("../../Player/Vacuum/VacuumTexture/endPoint")
+
+[node name="Trash10" parent="Trash Objects" node_paths=PackedStringArray("target") instance=ExtResource("3_alwin")]
+position = Vector2(-278, 271)
+target = NodePath("../../Player/Vacuum/VacuumTexture/endPoint")
+
+[node name="Trash11" parent="Trash Objects" node_paths=PackedStringArray("target") instance=ExtResource("3_alwin")]
+position = Vector2(-371, 77)
+target = NodePath("../../Player/Vacuum/VacuumTexture/endPoint")
+
+[node name="Trash12" parent="Trash Objects" node_paths=PackedStringArray("target") instance=ExtResource("3_alwin")]
+position = Vector2(-316, 136)
+target = NodePath("../../Player/Vacuum/VacuumTexture/endPoint")
+
+[node name="UI" parent="." instance=ExtResource("2_1ccqb")]
+
+[connection signal="area_entered" from="Player/Vacuum/VacuumTexture/endPoint/vacuumArea2D" to="Player/Vacuum" method="_on_vacuum_area_2d_area_entered"]

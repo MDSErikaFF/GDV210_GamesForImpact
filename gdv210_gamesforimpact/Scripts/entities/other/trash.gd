@@ -1,8 +1,6 @@
 extends CharacterBody2D
 
 @export var TrashTexture : Sprite2D
-@export var target : Marker2D #for the target to be detected the vacuum, and the player due to the vacuum being in the player,
-							  #will need to be made local so the trash can be assighned to the target marker.
 
 @export var min_speed: float = 5.0
 @export var max_speed: float = 10000.0
@@ -22,9 +20,9 @@ func _ready():
 func _process(delta):
 	if GameManager.CurrentlyVacuum && is_in_trash_area:
 		#trash being vacuumed in a lerp
-		var distance = global_position.distance_to(target.global_position)
+		var distance = global_position.distance_to(GameManager.targetVacuumMarker)
 		var speed = clamp(lerp_base / distance, min_speed, max_speed)
-		global_position = global_position.move_toward(target.global_position, speed * delta)
+		global_position = global_position.move_toward(GameManager.targetVacuumMarker, speed * delta)
 		
 		#when it gets to the target, the noosel of the vacuum, it goes to on_target_reached()
 		if distance <= reach_threshold && !has_reached_target:
@@ -49,7 +47,7 @@ func _on_trash_area_2d_area_exited(area):
 
 func on_target_reached():
 	#checks if it can pick up any more
-	if GameManager.TrashCollected <= GameManager.MaxTrashStorage:
+	if GameManager.TrashCollected <= GameManager.MaxTrashStorage - 1:
 		GameManager.TrashCollected += 1 #adds the number to the backpack
 		print("Trash amount collected: ", GameManager.TrashCollected)
 		queue_free() #then removes the object
