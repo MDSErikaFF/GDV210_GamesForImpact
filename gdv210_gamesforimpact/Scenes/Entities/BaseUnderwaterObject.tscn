@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cese1ygthq2e1"]
+
+[ext_resource type="Script" path="res://Scripts/entities/other/baseobject.gd" id="1_0fkib"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p25r7"]
+
+[node name="BaseUnderwaterObject" type="Node2D"]
+script = ExtResource("1_0fkib")
+
+[node name="BaseObjectArea2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BaseObjectArea2D"]
+shape = SubResource("CircleShape2D_p25r7")
