@@ -16,10 +16,11 @@ var MaxSealSpeed = 500
 var SealSpeed = 300
 
 var debugOn = false;
+var isPaused = false;
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	process_mode = PROCESS_MODE_ALWAYS
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -30,6 +31,10 @@ func _process(delta):
 	
 	if Input.is_action_just_pressed("ActivateDebug"):
 		debugOn = !debugOn
+	
+	if Input.is_action_just_pressed("Pause"):
+		toggle_pause();
+	
 	
 	if debugOn:
 		
@@ -46,4 +51,7 @@ func _process(delta):
 	if TrashCollected >= MaxTrashStorage:
 		print("Trash Inventory full, go trade it in the Shaop!")
 	
- 
+	
+func toggle_pause():
+	isPaused = !isPaused
+	get_tree().paused = isPaused

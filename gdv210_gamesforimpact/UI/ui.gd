@@ -11,6 +11,8 @@ extends Control
 @onready var LableStats = $"../DebugUI/Label Stats"
 @onready var LableControls = $"../DebugUI/Label Controls"
 
+@onready var PauseMenu = $"../Pause Menu"
+
 
 
 # Called when the node enters the scene tree for the first time.
@@ -18,7 +20,7 @@ func _ready():
 	LableInventoryFull.visible = false;
 	LableAllShellColected.visible = false;
 	DebugUI.visible = false;
-	
+	PauseMenu.visible = false;
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -54,4 +56,19 @@ func _process(delta):
 	else:
 		DebugUI.visible = false
 
+	if GameManager.isPaused:
+		PauseMenu.visible = true
+	else:
+		PauseMenu.visible = false;
+
 	
+
+
+func _on_button_continue_pressed():
+	GameManager.toggle_pause();
+
+
+func _on_button_to_main_menu_pressed():
+	GameManager.toggle_pause();
+	get_tree().change_scene_to_file("res://UI/main_menu.tscn")
+	pass
