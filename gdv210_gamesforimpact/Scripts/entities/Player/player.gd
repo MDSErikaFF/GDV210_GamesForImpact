@@ -7,6 +7,8 @@ class_name Player
 
 @export var friction = 600
 
+@export var rotation_speed = 10.0
+
 var input = Vector2.ZERO
 
 var last_angle = 0.0;
@@ -20,14 +22,24 @@ func _physics_process(delta):
 			velocity = Vector2.ZERO
 	else:
 		velocity += input * accel * delta
-		velocity = velocity.limit_length(speed)
-		
+		#velocity = velocity.limit_length(speed)
+		velocity = velocity.limit_length(GameManager.SealSpeed)
+
+	
+	
+	var target_angle = last_angle
 	# updates the player's rotation acording to the velocity angle
 	if velocity.length() > 1:
-		last_angle = velocity.angle()
-		rotation = last_angle
-	else: # when not moving, stay rotated at the last angle 
-		rotation = last_angle
+		target_angle = velocity.angle()
+	elif input != Vector2.ZERO:
+		target_angle = input.angle()
+		
+	last_angle = target_angle
+	rotation = lerp_angle(rotation, target_angle, rotation_speed * delta)
+
+		
+		
+		
 	move_and_slide()
 
 func get_input():

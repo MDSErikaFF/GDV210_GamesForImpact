@@ -15,37 +15,120 @@ grow_vertical = 2
 theme = ExtResource("1_tu5qf")
 script = ExtResource("2_dviu8")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="UI"]
+[node name="MarginContainer" type="MarginContainer" parent="UI"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -0.009
-anchor_right = 1.0
-anchor_bottom = 0.159
-offset_left = 4.32
-offset_right = -79.0
-offset_bottom = -17.93
-grow_horizontal = 2
+anchor_right = 0.469
+anchor_bottom = 0.092
+offset_right = 72.88
+offset_bottom = 8.16
+scale = Vector2(0.75, 0.75)
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 4
 
-[node name="Panel" type="Panel" parent="UI/HBoxContainer"]
-custom_minimum_size = Vector2(94.995, 0)
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/MarginContainer"]
 layout_mode = 2
 
-[node name="Label Trash Count" type="Label" parent="UI/HBoxContainer/Panel"]
+[node name="Panel" type="Panel" parent="UI/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(142.625, 0)
+layout_mode = 2
+
+[node name="Label Trash Count" type="Label" parent="UI/MarginContainer/HBoxContainer/Panel"]
 layout_mode = 0
-offset_left = 10.0
-offset_top = 4.0
-offset_right = 83.0
-offset_bottom = 27.0
+offset_left = 11.3333
+offset_top = 7.0
+offset_right = 137.333
+offset_bottom = 24.0
 text = "Trash: ## / ##"
 
-[node name="Panel2" type="Panel" parent="UI/HBoxContainer"]
-custom_minimum_size = Vector2(87.335, 0)
+[node name="Panel2" type="Panel" parent="UI/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(148.815, 0)
 layout_mode = 2
 
-[node name="Label Shell Count" type="Label" parent="UI/HBoxContainer/Panel2"]
+[node name="Label Shell Count" type="Label" parent="UI/MarginContainer/HBoxContainer/Panel2"]
 layout_mode = 0
-offset_left = 9.0
-offset_top = 5.0
-offset_right = 82.0
-offset_bottom = 28.0
+offset_left = 9.33333
+offset_top = 6.66667
+offset_right = 144.333
+offset_bottom = 21.6667
 text = "Shells: ## / ##"
+
+[node name="Lable Inventory Full" type="Label" parent="UI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.01
+anchor_top = 0.078
+anchor_right = 0.23
+anchor_bottom = 0.21
+offset_left = 0.200001
+offset_top = -0.0599995
+offset_right = 20.6
+offset_bottom = -2.7
+rotation = 0.0698132
+scale = Vector2(0.855, 0.855)
+text = "Storage Full!!
+Go to Shop!"
+
+[node name="Lable All Shells Collected" type="Label" parent="UI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.246
+anchor_top = 0.09
+anchor_right = 0.538
+anchor_bottom = 0.202
+offset_left = -0.0799942
+offset_top = 2.7
+offset_right = 23.76
+offset_bottom = 5.46
+rotation = -0.0698132
+scale = Vector2(0.855, 0.855)
+text = "Return to Shop. Return the Shels!!
+"
+autowrap_mode = 2
+
+[node name="DebugUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label Stats" type="Label" parent="DebugUI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.015
+anchor_top = 0.278
+anchor_right = 0.327
+anchor_bottom = 0.601
+offset_left = -0.2
+offset_top = -0.0600052
+offset_right = 109.04
+offset_bottom = 65.73
+scale = Vector2(0.57, 0.57)
+text = "-Stats-
+-Seal Upgrades-
+.Trash Vacum Upgrade: 
+.Seal Speed Upgrade: 
+.Seal Dangerous Trash Resistance: 
+.Current ocean trash level:
+"
+
+[node name="Label Controls" type="Label" parent="DebugUI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.015
+anchor_top = 0.637
+anchor_right = 0.323
+anchor_bottom = 0.96
+offset_left = -0.2
+offset_top = 0.00999451
+offset_right = 110.96
+offset_bottom = 65.8
+scale = Vector2(0.57, 0.57)
+text = "-Controls-
+Movement: WASD
+.Trash Vacum on: L-mouse button
+-Debug Controls-
+.Upgrade trash vacum: Page Up
+.Quit out of game: esc"
