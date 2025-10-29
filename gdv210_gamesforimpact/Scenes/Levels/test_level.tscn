@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://5tlnhor62a8w"]
+[gd_scene load_steps=5 format=3 uid="uid://5tlnhor62a8w"]
 
 [ext_resource type="PackedScene" uid="uid://bqdcw1280c2sh" path="res://Scenes/Player/Player.tscn" id="1_61kh1"]
 [ext_resource type="PackedScene" uid="uid://hu7s8u6h06jo" path="res://UI/UI.tscn" id="2_1ccqb"]
-[ext_resource type="PackedScene" uid="uid://u1yc2j4db2v6" path="res://Scenes/Entities/trash.tscn" id="3_alwin"]
+[ext_resource type="PackedScene" uid="uid://dmc1xgtiou53n" path="res://Scenes/Entities/trash.tscn" id="3_alwin"]
+[ext_resource type="PackedScene" uid="uid://c8e3bagm5xu6g" path="res://Scenes/Entities/Shell.tscn" id="4_c5lyt"]
 
 [node name="TestLevel" type="Node2D"]
 
@@ -47,3 +48,14 @@ position = Vector2(-371, 77)
 position = Vector2(-316, 136)
 
 [node name="UI" parent="." instance=ExtResource("2_1ccqb")]
+
+[node name="Shell Objects" type="Node2D" parent="."]
+
+[node name="Shell" parent="Shell Objects" instance=ExtResource("4_c5lyt")]
+position = Vector2(-272, -190)
+
+[node name="Shell2" parent="Shell Objects" instance=ExtResource("4_c5lyt")]
+position = Vector2(-351, -140)
+
+[node name="Shell3" parent="Shell Objects" instance=ExtResource("4_c5lyt")]
+position = Vector2(-353, -71)

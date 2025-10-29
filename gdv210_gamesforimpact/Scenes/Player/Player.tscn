@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://d2yrsemu8k8uj" path="res://icon.svg" id="1_fi5bh"]
 [ext_resource type="Script" path="res://Scripts/entities/Player/player.gd" id="1_t8xw5"]
-[ext_resource type="PackedScene" uid="uid://48and8s054y4" path="res://Scenes/Player/Vacuum.tscn" id="3_l0fjh"]
+[ext_resource type="PackedScene" uid="uid://b1ye0bkonyjfq" path="res://Scenes/Player/Vacuum.tscn" id="3_l0fjh"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i54qc"]
 radius = 12.0

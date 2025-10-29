@@ -13,8 +13,8 @@ func _process(delta):
 	time += delta * float_speed
 	position.y = initial_y + sin(time) * float_height
 
-
-func _on_shell_object_area_2d_area_entered(area: Area2D):
-	print("Collision with ", area.name)
-	GameManager.ShellsCollected += 1
-	
+func _on_shell_object_area_2d_body_entered(body: Node2D) -> void:
+	print("Collision with ", body.name)
+	if body.name == "Player":
+		GameManager.ShellsCollected += 1
+		queue_free()

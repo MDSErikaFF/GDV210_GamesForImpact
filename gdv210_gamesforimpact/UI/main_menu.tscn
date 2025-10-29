@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://UI/main_menu.gd" id="1_ir227"]
 [ext_resource type="Texture2D" uid="uid://dnndx66fhkjvd" path="res://Assets/Images/Screenshot 2025-10-26 122252.png" id="3_hjgmt"]
 
-[node name="CanvasLayer" type="CanvasLayer"]
+[node name="CanvasLayer2" type="CanvasLayer"]
 
 [node name="MainMenu" type="Control" parent="."]
 layout_mode = 3
@@ -30,6 +30,7 @@ offset_right = 371.0
 offset_bottom = 89.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MainMenu"]
+layout_mode = 0
 offset_left = 181.0
 offset_top = 133.0
 offset_right = 310.0
