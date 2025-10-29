@@ -18,7 +18,7 @@ script = ExtResource("1_ir227")
 metadata/_edit_lock_ = true
 
 [node name="Screenshot2025-10-26122252" type="Sprite2D" parent="MainMenu"]
-position = Vector2(245, 100)
+position = Vector2(240, 100)
 scale = Vector2(0.471756, 0.438903)
 texture = ExtResource("3_hjgmt")
 

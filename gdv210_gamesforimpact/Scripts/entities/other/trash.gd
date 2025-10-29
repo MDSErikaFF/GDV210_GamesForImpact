@@ -1,7 +1,5 @@
 extends CharacterBody2D
 
-@export var TrashTexture : Sprite2D
-
 @export var min_speed: float = 5.0
 @export var max_speed: float = 10000.0
 @export var lerp_base: float = 5000.0 #higher = faster pull when close
@@ -13,8 +11,35 @@ var is_in_trash_area : bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	#add a random texture to the TrashSprite from the trash sprite folder
+	var folder_path = "res://Assets/Images/trashSprites/" #gets the folder path
+	var png_files = get_png_files(folder_path)
+	
+	if png_files.size() > 0:
+		var random_file = png_files[randi() % png_files.size()]
+		var tex = load(random_file)
+		if tex is Texture2D:
+			$TrashSprite.texture = tex
+		else:
+			print("Failed to load texture: ", random_file) #for debug
+	else:
+		print("No PNG files found in folder: ", folder_path) #for debug
 
+#gets the png from the folder and returns with the png
+func get_png_files(folder_path: String) -> Array:
+	var dir = DirAccess.open(folder_path)
+	var files = []
+	
+	if dir:
+		dir.list_dir_begin()
+		var file_name = dir.get_next()
+		while file_name != "":
+			if not dir.current_is_dir() and file_name.ends_with(".png"):
+				files.append(folder_path + "/" + file_name)
+			file_name = dir.get_next()
+		dir.list_dir_end()
+	
+	return files
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://cese1ygthq2e1"]
+[gd_scene load_steps=3 format=3 uid="uid://b3rgo86c3toex"]
 
 [ext_resource type="Script" path="res://Scripts/entities/other/baseobject.gd" id="1_0fkib"]
 

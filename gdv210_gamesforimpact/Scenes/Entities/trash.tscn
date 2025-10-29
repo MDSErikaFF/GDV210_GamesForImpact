@@ -1,17 +1,17 @@
 [gd_scene load_steps=4 format=3 uid="uid://dmc1xgtiou53n"]
 
-[ext_resource type="Texture2D" uid="uid://d2yrsemu8k8uj" path="res://icon.svg" id="1_h0vlg"]
-[ext_resource type="Script" path="res://Scripts/entities/other/trash.gd" id="1_i5cgn"]
+[ext_resource type="Script" path="res://Scripts/entities/other/trash.gd" id="1_dcsou"]
+[ext_resource type="Texture2D" uid="uid://ddivbk3h7g0ms" path="res://Assets/Images/trashSprites/Waterbottle.png" id="2_sm4yy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_myspa"]
 radius = 22.0227
 
 [node name="Trash" type="CharacterBody2D"]
-script = ExtResource("1_i5cgn")
+script = ExtResource("1_dcsou")
 
-[node name="Icon" type="Sprite2D" parent="."]
-scale = Vector2(0.335938, 0.335938)
-texture = ExtResource("1_h0vlg")
+[node name="TrashSprite" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_sm4yy")
 
 [node name="trashArea2D" type="Area2D" parent="."]
 collision_layer = 49
