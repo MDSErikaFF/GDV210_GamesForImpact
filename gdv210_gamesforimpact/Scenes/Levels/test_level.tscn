@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://5tlnhor62a8w"]
+[gd_scene load_steps=14 format=4 uid="uid://5tlnhor62a8w"]
 
 [ext_resource type="PackedScene" uid="uid://bqdcw1280c2sh" path="res://Scenes/Player/Player.tscn" id="1_61kh1"]
 [ext_resource type="Texture2D" uid="uid://bwrbgg78c117h" path="res://Assets/Images/prototypeTilesetNonCollidable.png" id="1_nij4l"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://dmc1xgtiou53n" path="res://Scenes/Entities/trash.tscn" id="3_alwin"]
 [ext_resource type="PackedScene" uid="uid://prap108ity0q" path="res://Scenes/Entities/Shell.tscn" id="4_c5lyt"]
 [ext_resource type="Texture2D" uid="uid://drib12i6tp1d6" path="res://Assets/Images/prototypeTileset.png" id="4_cjj4c"]
+[ext_resource type="PackedScene" uid="uid://bfg48j01vd0uq" path="res://Scenes/Entities/out_of_water_area.tscn" id="7_2ubou"]
+[ext_resource type="Shader" path="res://Assets/Shaders/underwater_effect.gdshader" id="8_a8sb4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pnrbo"]
 texture = ExtResource("1_nij4l")
@@ -186,8 +188,13 @@ tile_size = Vector2i(64, 64)
 physics_layer_0/collision_layer = 2
 sources/0 = SubResource("TileSetAtlasSource_42d8n")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_flxnp"]
-size = Vector2(6656, 266)
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4hlw7"]
+shader = ExtResource("8_a8sb4")
+shader_parameter/wave_strength = 9.032
+shader_parameter/wave_speed = 1.544
+shader_parameter/distortion_strength = 0.002
+shader_parameter/water_tint = Color(0, 0.4, 0.6, 0.25)
+shader_parameter/blur_amount = 0.004
 
 [node name="TestLevel" type="Node2D"]
 
@@ -260,13 +267,15 @@ position = Vector2(751, -463)
 
 [node name="Shell3" parent="Shell Objects" instance=ExtResource("4_c5lyt")]
 position = Vector2(1025, 205)
-[node name="OutOfWater" type="Area2D" parent="."]
-position = Vector2(36, -846)
-metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="OutOfWater"]
-position = Vector2(-4, 0)
-shape = SubResource("RectangleShape2D_flxnp")
+[node name="OutOfWater" parent="." instance=ExtResource("7_2ubou")]
+
+[node name="Underwater Effect Filter" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_4hlw7")
+offset_left = -3790.0
+offset_top = -711.0
+offset_right = 3830.0
+offset_bottom = 832.0
 
 [connection signal="body_entered" from="OutOfWater" to="Player" method="_on_out_of_water_body_entered"]
 [connection signal="body_exited" from="OutOfWater" to="Player" method="_on_out_of_water_body_exited"]
