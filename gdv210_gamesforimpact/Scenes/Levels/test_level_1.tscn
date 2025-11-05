@@ -1,12 +1,13 @@
 [gd_scene load_steps=13 format=4 uid="uid://5tlnhor62a8w"]
 
 [ext_resource type="Texture2D" uid="uid://bwrbgg78c117h" path="res://Assets/Images/prototypeTilesetNonCollidable.png" id="1_aine2"]
+[ext_resource type="Script" path="res://Scripts/level/test_level_1.gd" id="1_nliob"]
 [ext_resource type="PackedScene" uid="uid://bqdcw1280c2sh" path="res://Scenes/Player/Player.tscn" id="2_etki2"]
 [ext_resource type="PackedScene" uid="uid://hu7s8u6h06jo" path="res://UI/UI.tscn" id="3_lpows"]
 [ext_resource type="Texture2D" uid="uid://drib12i6tp1d6" path="res://Assets/Images/prototypeTileset.png" id="4_w1r1w"]
 [ext_resource type="PackedScene" uid="uid://prap108ity0q" path="res://Scenes/Entities/Shell.tscn" id="5_fxido"]
-[ext_resource type="PackedScene" uid="uid://bfg48j01vd0uq" path="res://Scenes/Entities/out_of_water_area.tscn" id="6_ie2m4"]
-[ext_resource type="Shader" path="res://Assets/Shaders/underwater_effect.gdshader" id="7_iqy6f"]
+[ext_resource type="PackedScene" uid="uid://bfg48j01vd0uq" path="res://Scenes/Levels/Other/out_of_water_area.tscn" id="6_ie2m4"]
+[ext_resource type="PackedScene" uid="uid://gk3guqkqijgb" path="res://Scenes/Levels/Other/underwater_effect_filter.tscn" id="7_517i5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pnrbo"]
 texture = ExtResource("1_aine2")
@@ -187,15 +188,8 @@ tile_size = Vector2i(64, 64)
 physics_layer_0/collision_layer = 2
 sources/0 = SubResource("TileSetAtlasSource_42d8n")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_4hlw7"]
-shader = ExtResource("7_iqy6f")
-shader_parameter/wave_strength = 9.032
-shader_parameter/wave_speed = 1.544
-shader_parameter/distortion_strength = 0.002
-shader_parameter/water_tint = Color(0, 0.4, 0.6, 0.25)
-shader_parameter/blur_amount = 0.004
-
 [node name="TestLevel" type="Node2D"]
+script = ExtResource("1_nliob")
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AADN/wAAAAABAAEAAADN/wEAAAABAAEAAADN/wIAAAABAAEAAADN/wMAAAABAAEAAADN/wQAAAABAAEAAADO/wAAAAABAAEAAADO/wEAAAABAAEAAADO/wIAAAABAAEAAADO/wMAAAABAAEAAADO/wQAAAABAAEAAADP/wAAAAABAAEAAADP/wEAAAABAAEAAADP/wIAAAABAAEAAADP/wMAAAABAAEAAADP/wQAAAABAAEAAADQ/wAAAAABAAEAAADQ/wEAAAABAAEAAADQ/wIAAAABAAEAAADQ/wMAAAABAAEAAADQ/wQAAAABAAEAAADR/wAAAAABAAEAAADR/wEAAAABAAEAAADR/wIAAAABAAEAAADR/wMAAAABAAEAAADR/wQAAAABAAEAAADS/wAAAAABAAEAAADS/wEAAAABAAEAAADS/wIAAAABAAEAAADS/wMAAAABAAEAAADS/wQAAAABAAEAAADM//X/AAABAAEAAADN//X/AAABAAEAAADO//X/AAABAAEAAADP//X/AAABAAEAAADQ//X/AAABAAEAAADR//X/AAABAAEAAADS//X/AAABAAEAAADT//X/AAABAAEAAADU//X/AAABAAEAAADV//X/AAABAAEAAADW//X/AAABAAEAAADX//X/AAABAAEAAADY//X/AAABAAEAAADZ//X/AAABAAEAAADa//X/AAABAAEAAADb//X/AAABAAEAAADc//X/AAABAAEAAADd//X/AAABAAEAAADe//X/AAABAAEAAADf//X/AAABAAEAAADg//X/AAABAAEAAADh//X/AAABAAEAAADi//X/AAABAAEAAADj//X/AAABAAEAAADk//X/AAABAAEAAADl//X/AAABAAEAAADm//X/AAABAAEAAADn//X/AAABAAEAAADo//X/AAABAAEAAADp//X/AAABAAEAAADq//X/AAABAAEAAADr//X/AAABAAEAAADs//X/AAABAAEAAADt//X/AAABAAEAAADu//X/AAABAAEAAADv//X/AAABAAEAAADw//X/AAABAAEAAADx//X/AAABAAEAAADy//X/AAABAAEAAADz//X/AAABAAEAAAD0//X/AAABAAEAAAD1//X/AAABAAEAAAD2//X/AAABAAEAAAD3//X/AAABAAEAAAD4//X/AAABAAEAAAD5//X/AAABAAEAAAD6//X/AAABAAEAAAD7//X/AAABAAEAAAD8//X/AAABAAEAAAD9//X/AAABAAEAAAD+//X/AAABAAEAAAD///X/AAABAAEAAAAAAPX/AAABAAEAAAABAPX/AAABAAEAAAACAPX/AAABAAEAAAADAPX/AAABAAEAAAAEAPX/AAABAAEAAAAFAPX/AAABAAEAAAAGAPX/AAABAAEAAAAHAPX/AAABAAEAAAAIAPX/AAABAAEAAAAJAPX/AAABAAEAAAAKAPX/AAABAAEAAAALAPX/AAABAAEAAAAMAPX/AAABAAEAAAANAPX/AAABAAEAAAAOAPX/AAABAAEAAAAPAPX/AAABAAEAAAAQAPX/AAABAAEAAAARAPX/AAABAAEAAAASAPX/AAABAAEAAAATAPX/AAABAAEAAAAUAPX/AAABAAEAAAAVAPX/AAABAAEAAAAWAPX/AAABAAEAAAAXAPX/AAABAAEAAAAYAPX/AAABAAEAAAAZAPX/AAABAAEAAAAaAPX/AAABAAEAAAAbAPX/AAABAAEAAAAcAPX/AAABAAEAAAAdAPX/AAABAAEAAAAeAPX/AAABAAEAAAAfAPX/AAABAAEAAAAgAPX/AAABAAEAAAAhAPX/AAABAAEAAAAiAPX/AAABAAEAAAAjAPX/AAABAAEAAAAkAPX/AAABAAEAAAAlAPX/AAABAAEAAAAmAPX/AAABAAEAAAAnAPX/AAABAAEAAAAoAPX/AAABAAEAAAApAPX/AAABAAEAAAAqAPX/AAABAAEAAAArAPX/AAABAAEAAAAsAPX/AAABAAEAAAAtAPX/AAABAAEAAAAuAPX/AAABAAEAAAAvAPX/AAABAAEAAAAwAPX/AAABAAEAAAAxAPX/AAABAAEAAAAyAPX/AAABAAEAAAAzAPX/AAABAAEAAAA=")
@@ -221,13 +215,10 @@ position = Vector2(751, -463)
 position = Vector2(1025, 205)
 
 [node name="OutOfWater" parent="." instance=ExtResource("6_ie2m4")]
+position = Vector2(0, -849)
 
-[node name="Underwater Effect Filter" type="ColorRect" parent="."]
-material = SubResource("ShaderMaterial_4hlw7")
-offset_left = -3790.0
-offset_top = -691.0
-offset_right = 3830.0
-offset_bottom = 832.0
+[node name="Underwater Effect Filter" parent="." instance=ExtResource("7_517i5")]
+visible = false
 
 [connection signal="body_entered" from="OutOfWater" to="Player" method="_on_out_of_water_body_entered"]
 [connection signal="body_exited" from="OutOfWater" to="Player" method="_on_out_of_water_body_exited"]

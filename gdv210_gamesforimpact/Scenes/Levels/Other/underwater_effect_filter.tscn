@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://gk3guqkqijgb"]
+
+[ext_resource type="Shader" path="res://Assets/Shaders/underwater_effect.gdshader" id="1_h1yhn"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4hlw7"]
+shader = ExtResource("1_h1yhn")
+shader_parameter/wave_strength = 9.032
+shader_parameter/wave_speed = 1.544
+shader_parameter/distortion_strength = 0.002
+shader_parameter/water_tint = Color(0, 0.4, 0.6, 0.25)
+shader_parameter/blur_amount = 0.004
+
+[node name="Underwater Effect Filter" type="ColorRect"]
+material = SubResource("ShaderMaterial_4hlw7")
+offset_left = -3790.0
+offset_top = -691.0
+offset_right = 3830.0
+offset_bottom = 832.0

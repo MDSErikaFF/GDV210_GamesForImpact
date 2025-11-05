@@ -28,9 +28,9 @@ var currentPollutionState = PollutionState.LEVEL_2
 
 # Preload the trash layouts for each level
 var trash_scenes = {
-	PollutionState.LEVEL_1: preload("res://Scenes/Levels/level1_trash_layout.tscn"),
-	PollutionState.LEVEL_2: preload("res://Scenes/Levels/level2_trash_layout.tscn"),
-	PollutionState.LEVEL_3: preload("res://Scenes/Levels/level3_trash_layout.tscn"),
+	PollutionState.LEVEL_1: preload("res://Scenes/Levels/Trash Layouts/level1_trash_layout.tscn"),
+	PollutionState.LEVEL_2: preload("res://Scenes/Levels/Trash Layouts/level2_trash_layout.tscn"),
+	PollutionState.LEVEL_3: preload("res://Scenes/Levels/Trash Layouts/level3_trash_layout.tscn"),
 }
 
 # Keep track of the currently loaded trash instance
@@ -39,7 +39,7 @@ var current_trash_instance: Node = null
 
 func _ready():
 	process_mode = PROCESS_MODE_ALWAYS
-	setup_trash()
+	setup_trash();
 
 
 # Called every frame
@@ -64,6 +64,8 @@ func _process(delta):
 
 	if TrashCollected >= MaxTrashStorage:
 		print("Trash Inventory full, go trade it in the Shop!")
+		
+
 
 
 func toggle_pause():
