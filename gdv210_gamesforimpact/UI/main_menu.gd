@@ -13,4 +13,4 @@ func _process(delta):
 
 func _on_button_play_pressed():
 	#TODO change out test level for real one
-	get_tree().change_scene_to_file("res://Scenes/Levels/test_level.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Levels/test_level_1.tscn")
