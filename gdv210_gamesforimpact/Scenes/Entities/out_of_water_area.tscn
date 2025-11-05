@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://bfg48j01vd0uq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_flxnp"]
+size = Vector2(6656, 266)
+
+[node name="OutOfWater" type="Area2D"]
+position = Vector2(36, -846)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-4, 0)
+shape = SubResource("RectangleShape2D_flxnp")
