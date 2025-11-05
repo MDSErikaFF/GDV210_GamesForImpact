@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://bfk0aivcf4qsr"]
+
+[ext_resource type="PackedScene" uid="uid://dmc1xgtiou53n" path="res://Scenes/Entities/trash.tscn" id="1_m4oso"]
+
+[node name="Trash Objects" type="Node2D"]
+
+[node name="Trash5" parent="." instance=ExtResource("1_m4oso")]
+position = Vector2(178, -54)
+
+[node name="Trash6" parent="." instance=ExtResource("1_m4oso")]
+position = Vector2(240, -67)
+
+[node name="Trash4" parent="." instance=ExtResource("1_m4oso")]
+position = Vector2(206, -132)
+
+[node name="Trash13" parent="." instance=ExtResource("1_m4oso")]
+position = Vector2(668, -382)
+
+[node name="Trash14" parent="." instance=ExtResource("1_m4oso")]
+position = Vector2(617, -458)
+
+[node name="Trash15" parent="." instance=ExtResource("1_m4oso")]
+position = Vector2(765, -348)

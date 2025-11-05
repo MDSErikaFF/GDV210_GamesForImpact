@@ -1,9 +1,8 @@
-[gd_scene load_steps=14 format=4 uid="uid://5tlnhor62a8w"]
+[gd_scene load_steps=13 format=4 uid="uid://5tlnhor62a8w"]
 
 [ext_resource type="PackedScene" uid="uid://bqdcw1280c2sh" path="res://Scenes/Player/Player.tscn" id="1_61kh1"]
 [ext_resource type="Texture2D" uid="uid://bwrbgg78c117h" path="res://Assets/Images/prototypeTilesetNonCollidable.png" id="1_nij4l"]
 [ext_resource type="PackedScene" uid="uid://hu7s8u6h06jo" path="res://UI/UI.tscn" id="2_1ccqb"]
-[ext_resource type="PackedScene" uid="uid://dmc1xgtiou53n" path="res://Scenes/Entities/trash.tscn" id="3_alwin"]
 [ext_resource type="PackedScene" uid="uid://prap108ity0q" path="res://Scenes/Entities/Shell.tscn" id="4_c5lyt"]
 [ext_resource type="Texture2D" uid="uid://drib12i6tp1d6" path="res://Assets/Images/prototypeTileset.png" id="4_cjj4c"]
 [ext_resource type="PackedScene" uid="uid://bfg48j01vd0uq" path="res://Scenes/Entities/out_of_water_area.tscn" id="7_2ubou"]
@@ -204,53 +203,6 @@ tile_set = SubResource("TileSet_682h2")
 
 [node name="Player" parent="." instance=ExtResource("1_61kh1")]
 
-[node name="Trash Objects" type="Node2D" parent="."]
-
-[node name="Trash" parent="Trash Objects" instance=ExtResource("3_alwin")]
-position = Vector2(65, -140)
-
-[node name="Trash2" parent="Trash Objects" instance=ExtResource("3_alwin")]
-position = Vector2(120, -102)
-
-[node name="Trash5" parent="Trash Objects" instance=ExtResource("3_alwin")]
-position = Vector2(178, -54)
-
-[node name="Trash6" parent="Trash Objects" instance=ExtResource("3_alwin")]
-position = Vector2(240, -67)
-
-[node name="Trash3" parent="Trash Objects" instance=ExtResource("3_alwin")]
-position = Vector2(145, -158)
-
-[node name="Trash4" parent="Trash Objects" instance=ExtResource("3_alwin")]
-position = Vector2(206, -132)
-
-[node name="Trash13" parent="Trash Objects" instance=ExtResource("3_alwin")]
-position = Vector2(668, -382)
-
-[node name="Trash14" parent="Trash Objects" instance=ExtResource("3_alwin")]
-position = Vector2(617, -458)
-
-[node name="Trash15" parent="Trash Objects" instance=ExtResource("3_alwin")]
-position = Vector2(765, -348)
-
-[node name="Trash7" parent="Trash Objects" instance=ExtResource("3_alwin")]
-position = Vector2(-382, 167)
-
-[node name="Trash8" parent="Trash Objects" instance=ExtResource("3_alwin")]
-position = Vector2(-282, 199)
-
-[node name="Trash9" parent="Trash Objects" instance=ExtResource("3_alwin")]
-position = Vector2(-370, 220)
-
-[node name="Trash10" parent="Trash Objects" instance=ExtResource("3_alwin")]
-position = Vector2(-278, 271)
-
-[node name="Trash11" parent="Trash Objects" instance=ExtResource("3_alwin")]
-position = Vector2(-371, 77)
-
-[node name="Trash12" parent="Trash Objects" instance=ExtResource("3_alwin")]
-position = Vector2(-316, 136)
-
 [node name="UI" parent="." instance=ExtResource("2_1ccqb")]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -273,7 +225,7 @@ position = Vector2(1025, 205)
 [node name="Underwater Effect Filter" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_4hlw7")
 offset_left = -3790.0
-offset_top = -711.0
+offset_top = -691.0
 offset_right = 3830.0
 offset_bottom = 832.0
 
