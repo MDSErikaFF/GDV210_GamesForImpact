@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://5tlnhor62a8w"]
+[gd_scene load_steps=12 format=4 uid="uid://5tlnhor62a8w"]
 
 [ext_resource type="PackedScene" uid="uid://bqdcw1280c2sh" path="res://Scenes/Player/Player.tscn" id="1_61kh1"]
 [ext_resource type="Texture2D" uid="uid://bwrbgg78c117h" path="res://Assets/Images/prototypeTilesetNonCollidable.png" id="1_nij4l"]
@@ -260,6 +260,7 @@ position = Vector2(751, -463)
 
 [node name="Shell3" parent="Shell Objects" instance=ExtResource("4_c5lyt")]
 position = Vector2(1025, 205)
+
 [node name="OutOfWater" type="Area2D" parent="."]
 position = Vector2(36, -846)
 metadata/_edit_group_ = true
