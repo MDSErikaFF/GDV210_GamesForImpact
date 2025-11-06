@@ -21,6 +21,12 @@ var input = Vector2.ZERO
 
 var last_angle = 0.0;
 
+func _ready():
+	# Find all 'out_of_water_area' nodes in the scene
+	for area in get_tree().get_nodes_in_group("OutOfWaterArea"):
+		connect_out_of_water_signals(area)
+
+
 func _physics_process(delta):
 	get_input()
 	
@@ -56,6 +62,11 @@ func _physics_process(delta):
 	move_and_slide()
 
 
+func connect_out_of_water_signals(area: Area2D):
+	if not area.body_entered.is_connected(_on_out_of_water_body_entered):
+		area.body_entered.connect(_on_out_of_water_body_entered)
+	if not area.body_exited.is_connected(_on_out_of_water_body_exited):
+		area.body_exited.connect(_on_out_of_water_body_exited)
 
 func get_input():
 	input.x = int(Input.is_action_pressed("Right")) - int(Input.is_action_pressed("Left"))

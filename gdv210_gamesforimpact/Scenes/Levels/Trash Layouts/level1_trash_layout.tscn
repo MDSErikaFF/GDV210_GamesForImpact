@@ -1,0 +1,101 @@
+[gd_scene load_steps=2 format=3 uid="uid://bdpq5hqplbj81"]
+
+[ext_resource type="PackedScene" uid="uid://dmc1xgtiou53n" path="res://Scenes/Entities/trash.tscn" id="1_di5ku"]
+
+[node name="Trash Objects" type="Node2D"]
+
+[node name="Trash" parent="." instance=ExtResource("1_di5ku")]
+position = Vector2(65, -140)
+
+[node name="Trash2" parent="." instance=ExtResource("1_di5ku")]
+position = Vector2(120, -102)
+
+[node name="Trash5" parent="." instance=ExtResource("1_di5ku")]
+position = Vector2(178, -54)
+
+[node name="Trash6" parent="." instance=ExtResource("1_di5ku")]
+position = Vector2(240, -67)
+
+[node name="Trash3" parent="." instance=ExtResource("1_di5ku")]
+position = Vector2(145, -158)
+
+[node name="Trash4" parent="." instance=ExtResource("1_di5ku")]
+position = Vector2(206, -132)
+
+[node name="Trash21" parent="." instance=ExtResource("1_di5ku")]
+position = Vector2(1553, -404)
+
+[node name="Trash22" parent="." instance=ExtResource("1_di5ku")]
+position = Vector2(1608, -366)
+
+[node name="Trash23" parent="." instance=ExtResource("1_di5ku")]
+position = Vector2(1666, -318)
+
+[node name="Trash24" parent="." instance=ExtResource("1_di5ku")]
+position = Vector2(1728, -331)
+
+[node name="Trash25" parent="." instance=ExtResource("1_di5ku")]
+position = Vector2(1633, -422)
+
+[node name="Trash26" parent="." instance=ExtResource("1_di5ku")]
+position = Vector2(1694, -396)
+
+[node name="Trash27" parent="." instance=ExtResource("1_di5ku")]
+position = Vector2(1830, -76)
+
+[node name="Trash28" parent="." instance=ExtResource("1_di5ku")]
+position = Vector2(1885, -38)
+
+[node name="Trash29" parent="." instance=ExtResource("1_di5ku")]
+position = Vector2(1943, 10)
+
+[node name="Trash30" parent="." instance=ExtResource("1_di5ku")]
+position = Vector2(2005, -3)
+
+[node name="Trash31" parent="." instance=ExtResource("1_di5ku")]
+position = Vector2(1910, -94)
+
+[node name="Trash32" parent="." instance=ExtResource("1_di5ku")]
+position = Vector2(1971, -68)
+
+[node name="Trash13" parent="." instance=ExtResource("1_di5ku")]
+position = Vector2(668, -382)
+
+[node name="Trash14" parent="." instance=ExtResource("1_di5ku")]
+position = Vector2(617, -458)
+
+[node name="Trash15" parent="." instance=ExtResource("1_di5ku")]
+position = Vector2(765, -348)
+
+[node name="Trash7" parent="." instance=ExtResource("1_di5ku")]
+position = Vector2(-382, 167)
+
+[node name="Trash8" parent="." instance=ExtResource("1_di5ku")]
+position = Vector2(-282, 199)
+
+[node name="Trash9" parent="." instance=ExtResource("1_di5ku")]
+position = Vector2(-370, 220)
+
+[node name="Trash10" parent="." instance=ExtResource("1_di5ku")]
+position = Vector2(-278, 271)
+
+[node name="Trash11" parent="." instance=ExtResource("1_di5ku")]
+position = Vector2(-371, 77)
+
+[node name="Trash12" parent="." instance=ExtResource("1_di5ku")]
+position = Vector2(-316, 136)
+
+[node name="Trash16" parent="." instance=ExtResource("1_di5ku")]
+position = Vector2(-2628, -134)
+
+[node name="Trash17" parent="." instance=ExtResource("1_di5ku")]
+position = Vector2(-2528, -102)
+
+[node name="Trash18" parent="." instance=ExtResource("1_di5ku")]
+position = Vector2(-2616, -81)
+
+[node name="Trash19" parent="." instance=ExtResource("1_di5ku")]
+position = Vector2(-2617, -224)
+
+[node name="Trash20" parent="." instance=ExtResource("1_di5ku")]
+position = Vector2(-2562, -165)

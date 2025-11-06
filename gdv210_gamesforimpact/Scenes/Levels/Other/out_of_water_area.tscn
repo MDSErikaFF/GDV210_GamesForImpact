@@ -3,8 +3,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_flxnp"]
 size = Vector2(6656, 266)
 
-[node name="OutOfWater" type="Area2D"]
-position = Vector2(36, -846)
+[node name="OutOfWater" type="Area2D" groups=["OutOfWaterArea"]]
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
