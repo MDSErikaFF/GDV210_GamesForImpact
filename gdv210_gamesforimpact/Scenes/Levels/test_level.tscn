@@ -193,6 +193,9 @@ sources/0 = SubResource("TileSetAtlasSource_42d8n")
 tile_map_data = PackedByteArray("AADN/wAAAAABAAEAAADN/wEAAAABAAEAAADN/wIAAAABAAEAAADN/wMAAAABAAEAAADN/wQAAAABAAEAAADO/wAAAAABAAEAAADO/wEAAAABAAEAAADO/wIAAAABAAEAAADO/wMAAAABAAEAAADO/wQAAAABAAEAAADP/wAAAAABAAEAAADP/wEAAAABAAEAAADP/wIAAAABAAEAAADP/wMAAAABAAEAAADP/wQAAAABAAEAAADQ/wAAAAABAAEAAADQ/wEAAAABAAEAAADQ/wIAAAABAAEAAADQ/wMAAAABAAEAAADQ/wQAAAABAAEAAADR/wAAAAABAAEAAADR/wEAAAABAAEAAADR/wIAAAABAAEAAADR/wMAAAABAAEAAADR/wQAAAABAAEAAADS/wAAAAABAAEAAADS/wEAAAABAAEAAADS/wIAAAABAAEAAADS/wMAAAABAAEAAADS/wQAAAABAAEAAAA=")
 tile_set = SubResource("TileSet_682h2")
 
+[node name="Shop" parent="." instance=ExtResource("7_q7gj4")]
+position = Vector2(1344, 3)
+
 [node name="Player" parent="." instance=ExtResource("1_61kh1")]
 
 [node name="Trash Objects" type="Node2D" parent="."]
@@ -257,7 +260,4 @@ position = Vector2(-529, -56)
 position = Vector2(751, -463)
 
 [node name="Shell3" parent="Shell Objects" instance=ExtResource("4_c5lyt")]
-position = Vector2(1025, 205)
-
-[node name="Shop" parent="." instance=ExtResource("7_q7gj4")]
-position = Vector2(730, -64)
+position = Vector2(579, 246)
