@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://5tlnhor62a8w"]
+[gd_scene load_steps=12 format=4 uid="uid://5tlnhor62a8w"]
 
 [ext_resource type="PackedScene" uid="uid://bqdcw1280c2sh" path="res://Scenes/Player/Player.tscn" id="1_61kh1"]
 [ext_resource type="Texture2D" uid="uid://bwrbgg78c117h" path="res://Assets/Images/prototypeTilesetNonCollidable.png" id="1_nij4l"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dmc1xgtiou53n" path="res://Scenes/Entities/trash.tscn" id="3_alwin"]
 [ext_resource type="PackedScene" uid="uid://prap108ity0q" path="res://Scenes/Entities/Shell.tscn" id="4_c5lyt"]
 [ext_resource type="Texture2D" uid="uid://drib12i6tp1d6" path="res://Assets/Images/prototypeTileset.png" id="4_cjj4c"]
+[ext_resource type="PackedScene" uid="uid://q2nqilgd5pf3" path="res://Scenes/Shop/Shop.tscn" id="7_q7gj4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pnrbo"]
 texture = ExtResource("1_nij4l")
@@ -257,3 +258,6 @@ position = Vector2(751, -463)
 
 [node name="Shell3" parent="Shell Objects" instance=ExtResource("4_c5lyt")]
 position = Vector2(1025, 205)
+
+[node name="Shop" parent="." instance=ExtResource("7_q7gj4")]
+position = Vector2(730, -64)

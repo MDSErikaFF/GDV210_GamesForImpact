@@ -14,7 +14,8 @@ func _process(delta):
 		GameManager.CurrentlyVacuum = false
 	
 	get_node("VacuumTexture").look_at(get_global_mouse_position())
-	
+	$VacuumTexture/endPoint/vacuumArea2D/CollisionPolygon2D.scale.x = GameManager.VacuumSizeLevel
+	$VacuumTexture/endPoint/vacuumArea2D/CollisionPolygon2D.scale.y = GameManager.VacuumSizeLevel
 	if Input.is_action_just_pressed("ui_page_up"):
 		if GameManager.VacuumSizeLevel <= GameManager.VacuumMaxSizeLevel:
 			GameManager.VacuumSizeLevel += 0.1

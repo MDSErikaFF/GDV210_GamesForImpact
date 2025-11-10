@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://hu7s8u6h06jo"]
+[gd_scene load_steps=5 format=3 uid="uid://hu7s8u6h06jo"]
 
 [ext_resource type="Theme" uid="uid://inxo6vyipgvi" path="res://Assets/Themes/ThemeUI.tres" id="1_tu5qf"]
 [ext_resource type="Script" path="res://UI/ui.gd" id="2_dviu8"]
 [ext_resource type="Theme" uid="uid://bsui8wjc4jfwc" path="res://Assets/Themes/ThemeMenu.tres" id="3_lgy8m"]
+[ext_resource type="Script" path="res://Scripts/entities/Shop/ShopUI.gd" id="4_5j0pp"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 process_mode = 3
@@ -195,5 +196,177 @@ custom_minimum_size = Vector2(0, 29.85)
 layout_mode = 2
 text = "TO Main Menu"
 
+[node name="ShopUI" type="Control" parent="."]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_lgy8m")
+script = ExtResource("4_5j0pp")
+
+[node name="Panel" type="Panel" parent="ShopUI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.9
+offset_left = 0.0399971
+offset_top = 0.0400009
+offset_right = -0.200043
+offset_bottom = -0.0200043
+
+[node name="ShopLabel" type="Label" parent="ShopUI/Panel"]
+layout_mode = 2
+offset_left = 120.96
+offset_top = 2.96
+offset_right = 260.96
+offset_bottom = 41.96
+theme_override_font_sizes/font_size = 30
+text = "SHOP"
+horizontal_alignment = 1
+
+[node name="LabelHBoxContainer" type="HBoxContainer" parent="ShopUI/Panel"]
+custom_minimum_size = Vector2(95, 35)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.288
+anchor_top = 0.303
+anchor_right = 0.718
+anchor_bottom = 0.792
+offset_left = -90.5629
+offset_top = -22.4698
+offset_right = 100.42
+offset_bottom = -62.0645
+theme_override_constants/separation = 28
+metadata/_edit_group_ = true
+
+[node name="TrashSpaceLabel" type="Label" parent="ShopUI/Panel/LabelHBoxContainer"]
+custom_minimum_size = Vector2(95, 0)
+layout_mode = 2
+text = "Space 
+For
+Trash"
+horizontal_alignment = 1
+
+[node name="VacuumAreaLabel" type="Label" parent="ShopUI/Panel/LabelHBoxContainer"]
+custom_minimum_size = Vector2(95, 0)
+layout_mode = 2
+text = "Area
+Of
+Vacuum"
+horizontal_alignment = 1
+
+[node name="SealSpeedLabel" type="Label" parent="ShopUI/Panel/LabelHBoxContainer"]
+custom_minimum_size = Vector2(95, 0)
+layout_mode = 2
+text = "Speed
+Of
+Seal"
+horizontal_alignment = 1
+
+[node name="PriceHBoxContainer2" type="HBoxContainer" parent="ShopUI/Panel"]
+custom_minimum_size = Vector2(95, 35)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.288
+anchor_top = 0.303
+anchor_right = 0.718
+anchor_bottom = 0.792
+offset_left = -90.5629
+offset_top = 38.5702
+offset_right = 100.42
+offset_bottom = -21.0245
+theme_override_constants/separation = 28
+metadata/_edit_group_ = true
+
+[node name="TrashSpacePrice" type="Label" parent="ShopUI/Panel/PriceHBoxContainer2"]
+custom_minimum_size = Vector2(95, 0)
+layout_mode = 2
+text = "10"
+horizontal_alignment = 1
+
+[node name="VacuumAreaPrice" type="Label" parent="ShopUI/Panel/PriceHBoxContainer2"]
+custom_minimum_size = Vector2(95, 0)
+layout_mode = 2
+text = "20"
+horizontal_alignment = 1
+
+[node name="SealSpeedPrice" type="Label" parent="ShopUI/Panel/PriceHBoxContainer2"]
+custom_minimum_size = Vector2(95, 0)
+layout_mode = 2
+text = "30"
+horizontal_alignment = 1
+
+[node name="BuyButtonsHBoxContainer" type="HBoxContainer" parent="ShopUI/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.288
+anchor_top = 0.303
+anchor_right = 0.718
+anchor_bottom = 0.792
+offset_left = -90.5629
+offset_top = 73.5302
+offset_right = 100.42
+offset_bottom = 2.93552
+theme_override_constants/separation = 28
+metadata/_edit_group_ = true
+
+[node name="TrashSpaceButton" type="Button" parent="ShopUI/Panel/BuyButtonsHBoxContainer"]
+custom_minimum_size = Vector2(95, 35)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "BUY"
+
+[node name="VacuumAreaButton" type="Button" parent="ShopUI/Panel/BuyButtonsHBoxContainer"]
+custom_minimum_size = Vector2(95, 35)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "BUY"
+
+[node name="SealSpeedButton" type="Button" parent="ShopUI/Panel/BuyButtonsHBoxContainer"]
+custom_minimum_size = Vector2(95, 35)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "BUY"
+
+[node name="NextLevelButton" type="Button" parent="ShopUI/Panel"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+offset_left = 41.96
+offset_top = 195.0
+offset_right = 173.96
+offset_bottom = 225.0
+size_flags_horizontal = 4
+text = "next Level"
+
+[node name="NotEnoughLabel" type="Label" parent="ShopUI/Panel"]
+custom_minimum_size = Vector2(95, 0)
+layout_mode = 2
+offset_left = 8.96
+offset_top = 175.96
+offset_right = 212.96
+offset_bottom = 195.96
+text = "Not Enough Shells"
+horizontal_alignment = 1
+
+[node name="LeaveShopButton" type="Button" parent="ShopUI/Panel"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+offset_left = 205.96
+offset_top = 195.0
+offset_right = 337.96
+offset_bottom = 225.0
+size_flags_horizontal = 4
+text = "Leave Shop"
+
 [connection signal="pressed" from="Pause Menu/Panel/VBoxContainer/Button Continue" to="UI" method="_on_button_continue_pressed"]
 [connection signal="pressed" from="Pause Menu/Panel/VBoxContainer/Button To Main Menu" to="UI" method="_on_button_to_main_menu_pressed"]
+[connection signal="pressed" from="ShopUI/Panel/BuyButtonsHBoxContainer/TrashSpaceButton" to="ShopUI" method="_on_trash_space_button_pressed"]
+[connection signal="pressed" from="ShopUI/Panel/BuyButtonsHBoxContainer/VacuumAreaButton" to="ShopUI" method="_on_vacuum_area_button_pressed"]
+[connection signal="pressed" from="ShopUI/Panel/BuyButtonsHBoxContainer/SealSpeedButton" to="ShopUI" method="_on_seal_speed_button_pressed"]
+[connection signal="pressed" from="ShopUI/Panel/NextLevelButton" to="ShopUI" method="_on_next_level_button_pressed"]
+[connection signal="pressed" from="ShopUI/Panel/LeaveShopButton" to="ShopUI" method="_on_leave_shop_button_pressed"]

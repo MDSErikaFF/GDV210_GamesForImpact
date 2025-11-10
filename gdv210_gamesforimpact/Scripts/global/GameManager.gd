@@ -2,8 +2,8 @@ extends Node
 
 #Vacuum global var
 var CurrentlyVacuum : bool = false #so the rubbish can get picked up
-var VacuumSizeLevel = 1 #for the level up of equipment. 1 is the lowest
-var VacuumMaxSizeLevel = 1.4
+var VacuumSizeLevel = 1.5 #for the level up of equipment. 1 is the lowest
+var VacuumMaxSizeLevel = 5
 
 var TrashCollected = 0
 var MaxTrashStorage = 10
@@ -15,8 +15,14 @@ var MaxShells = 3;
 var MaxSealSpeed = 500
 var SealSpeed = 300
 
+var TrashSpaceLevel = 1
+var VacuumAreaLevel = 1
+var SealSpeedLevel = 1
+
 var debugOn = false;
 var isPaused = false;
+var atShop = false;
+var inShop = false;
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

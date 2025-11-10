@@ -12,6 +12,7 @@ extends Control
 @onready var LableControls = $"../DebugUI/Label Controls"
 
 @onready var PauseMenu = $"../Pause Menu"
+@onready var ShopUI = $"../ShopUI"
 
 
 
@@ -60,6 +61,11 @@ func _process(delta):
 		PauseMenu.visible = true
 	else:
 		PauseMenu.visible = false;
+
+	if GameManager.inShop:
+		ShopUI.visible = true
+	else:
+		ShopUI.visible = false;
 
 	
 
