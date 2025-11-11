@@ -4,7 +4,7 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4hlw7"]
 shader = ExtResource("1_h1yhn")
-shader_parameter/wave_strength = 9.032
+shader_parameter/wave_strength = 6.013
 shader_parameter/wave_speed = 1.544
 shader_parameter/distortion_strength = 0.002
 shader_parameter/water_tint = Color(0, 0.4, 0.6, 0.25)

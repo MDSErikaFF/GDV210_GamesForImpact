@@ -1,0 +1,63 @@
+[gd_scene load_steps=10 format=3 uid="uid://pvdvjo67dfuw"]
+
+[ext_resource type="Script" path="res://Scripts/entities/Shop/hermit_crab.gd" id="1_ibg5y"]
+[ext_resource type="Texture2D" uid="uid://c5qctgs2embwk" path="res://Assets/Images/Characters/HermitCrab_SpriteSheet_Idle.png" id="1_l1mss"]
+[ext_resource type="Texture2D" uid="uid://bnt3o0nqr7ue6" path="res://Assets/Images/PressE_Icon.png" id="3_1f0r8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ddbaa"]
+atlas = ExtResource("1_l1mss")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uwgbi"]
+atlas = ExtResource("1_l1mss")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mcyc4"]
+atlas = ExtResource("1_l1mss")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ydt5o"]
+atlas = ExtResource("1_l1mss")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_itsf6"]
+atlas = ExtResource("1_l1mss")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_liuqk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ddbaa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uwgbi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mcyc4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ydt5o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_itsf6")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[node name="HermitCrab" type="Node2D"]
+script = ExtResource("1_ibg5y")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(-1, 1)
+sprite_frames = SubResource("SpriteFrames_liuqk")
+animation = &"Idle"
+autoplay = "Idle"
+frame = 2
+frame_progress = 0.573324
+
+[node name="EnterShopSprite" type="Sprite2D" parent="."]
+position = Vector2(41, -43)
+texture = ExtResource("3_1f0r8")

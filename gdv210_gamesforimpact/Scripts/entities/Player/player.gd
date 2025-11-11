@@ -21,6 +21,9 @@ var input = Vector2.ZERO
 
 var last_angle = 0.0;
 
+@onready var seal_sprite = $AnimatedSprite2D
+@onready var trashVacuum = $Vacuum
+
 
 enum PlayState
 {
@@ -98,6 +101,8 @@ func player_movement(delta):
 	
 	last_angle = target_angle
 	rotation = lerp_angle(rotation, target_angle, rotation_speed * delta)
+	
+		
 
 
 func _on_out_of_water_body_entered(body):

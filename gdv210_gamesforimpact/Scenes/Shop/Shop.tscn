@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://q2nqilgd5pf3"]
+[gd_scene load_steps=5 format=3 uid="uid://q2nqilgd5pf3"]
 
 [ext_resource type="Script" path="res://Scripts/entities/Shop/Shop.gd" id="1_sj8lk"]
 [ext_resource type="Texture2D" uid="uid://bcawmp7cufhka" path="res://Assets/Images/Ship 1.png" id="2_nj55o"]
+[ext_resource type="PackedScene" uid="uid://pvdvjo67dfuw" path="res://Scenes/Shop/hermit_crab.tscn" id="3_et8b6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p578e"]
 size = Vector2(240, 173)
@@ -11,6 +12,9 @@ script = ExtResource("1_sj8lk")
 
 [node name="ShopSprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_nj55o")
+
+[node name="HermitCrab" parent="." instance=ExtResource("3_et8b6")]
+position = Vector2(-293, 282)
 
 [node name="ShopArea2D" type="Area2D" parent="."]
 
