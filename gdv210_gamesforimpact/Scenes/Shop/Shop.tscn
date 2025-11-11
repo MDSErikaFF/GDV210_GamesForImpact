@@ -14,12 +14,14 @@ script = ExtResource("1_sj8lk")
 texture = ExtResource("2_nj55o")
 
 [node name="HermitCrab" parent="." instance=ExtResource("3_et8b6")]
-position = Vector2(-293, 282)
+position = Vector2(-21, 219)
 
 [node name="ShopArea2D" type="Area2D" parent="."]
+position = Vector2(-28, 180)
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ShopArea2D"]
-position = Vector2(-279, 233.5)
 shape = SubResource("RectangleShape2D_p578e")
 
 [connection signal="body_entered" from="ShopArea2D" to="." method="_on_shop_area_2d_body_entered"]

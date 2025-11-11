@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=4 uid="uid://rbmwgrae2ag0"]
+[gd_scene load_steps=6 format=4 uid="uid://rbmwgrae2ag0"]
 
-[ext_resource type="Script" path="res://Scripts/level/Level.gd" id="1_yw7e4"]
-[ext_resource type="TileSet" uid="uid://pw5bfmkyovoy" path="res://Scripts/level/CollisionOffTS.tres" id="2_vmfrp"]
-[ext_resource type="SpriteFrames" uid="uid://ccn7gh5m8mdf8" path="res://Scripts/level/WaterFrames.tres" id="3_bj3y1"]
-[ext_resource type="TileSet" uid="uid://y70j8mor0218" path="res://Scripts/level/CollisionOnTS.tres" id="4_bxviy"]
+[ext_resource type="Script" path="res://Scripts/Levels/Level.gd" id="1_yw7e4"]
+[ext_resource type="TileSet" uid="uid://pw5bfmkyovoy" path="res://Scripts/Levels/Other/CollisionOffTS.tres" id="2_vmfrp"]
+[ext_resource type="SpriteFrames" uid="uid://ccn7gh5m8mdf8" path="res://Scripts/Levels/Other/WaterFrames.tres" id="3_bj3y1"]
+[ext_resource type="PackedScene" uid="uid://q2nqilgd5pf3" path="res://Scenes/Shop/Shop.tscn" id="3_nf76s"]
+[ext_resource type="TileSet" uid="uid://y70j8mor0218" path="res://Scripts/Levels/Other/CollisionOnTS.tres" id="4_bxviy"]
 
 [node name="TileMap" type="Node2D"]
 script = ExtResource("1_yw7e4")
@@ -27,8 +28,12 @@ tile_set = ExtResource("2_vmfrp")
 collision_enabled = false
 
 [node name="ShipLayer" type="TileMapLayer" parent="."]
+visible = false
 tile_map_data = PackedByteArray("AADN//3/AAAAAAUAAADN//7/AAAAAAYAAADN////AAAAAAcAAADN/wAAAAAAAAgAAADN/wEAAAAAAAkAAADN/wIAAAAAAAoAAADN/wMAAAAAAAsAAADN/wQAAAAAAAwAAADO//3/AAABAAUAAADO//7/AAABAAYAAADO////AAABAAcAAADO/wAAAAABAAgAAADO/wEAAAABAAkAAADO/wIAAAABAAoAAADO/wMAAAABAAsAAADO/wQAAAABAAwAAADP//z/AAACAAQAAADP//3/AAACAAUAAADP//7/AAACAAYAAADP////AAACAAcAAADP/wAAAAACAAgAAADP/wEAAAACAAkAAADP/wIAAAACAAoAAADP/wMAAAACAAsAAADP/wQAAAACAAwAAADQ//z/AAADAAQAAADQ//3/AAADAAUAAADQ//7/AAADAAYAAADQ////AAADAAcAAADQ/wAAAAADAAgAAADQ/wEAAAADAAkAAADQ/wIAAAADAAoAAADQ/wMAAAADAAsAAADQ/wQAAAADAAwAAADR//z/AAAEAAQAAADR//3/AAAEAAUAAADR//7/AAAEAAYAAADR////AAAEAAcAAADR/wAAAAAEAAgAAADR/wEAAAAEAAkAAADR/wIAAAAEAAoAAADR/wMAAAAEAAsAAADR/wQAAAAEAAwAAADS//z/AAAFAAQAAADS//3/AAAFAAUAAADS//7/AAAFAAYAAADS////AAAFAAcAAADS/wAAAAAFAAgAAADS/wEAAAAFAAkAAADS/wIAAAAFAAoAAADS/wMAAAAJAAUAAADS/wQAAAAJAAUAAADT//z/AAAGAAQAAADT//3/AAAGAAUAAADT//7/AAAGAAYAAADT////AAAGAAcAAADT/wAAAAAGAAgAAADT/wEAAAAGAAkAAADT/wIAAAAGAAoAAADT/wMAAAAJAAUAAADT/wQAAAAJAAUAAADU//z/AAAHAAQAAADU//3/AAAHAAUAAADU//7/AAAHAAYAAADU////AAAHAAcAAADU/wAAAAAHAAgAAADU/wIAAAAHAAoAAADU/wMAAAAKAAUAAADU/wQAAAAKAAUAAAA=")
 tile_set = ExtResource("2_vmfrp")
+
+[node name="Shop" parent="." instance=ExtResource("3_nf76s")]
+position = Vector2(-3069, 66)
 
 [node name="ObjectDecorationsLayer" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AADX/wQAAAABAAQAAADY/wQAAAABAAQAAADW/wQAAAABAAQAAADZ/wQAAAABAAQAAADX/wMAAgAAAAAAAADe/wQAAAAAAAQAAADj/wQAAAABAAQAAADj/wMAAgAAAAAAAADS/wMAAAAFAAsAAADS/wQAAAAFAAwAAADT/wMAAAAGAAsAAADT/wQAAAAGAAwAAADU/wMAAAAHAAsAAADU/wQAAAAHAAwAAADQ/wQAAgAAAAAAAAA=")
