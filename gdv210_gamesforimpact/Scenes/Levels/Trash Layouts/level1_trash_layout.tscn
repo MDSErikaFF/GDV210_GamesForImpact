@@ -4,41 +4,64 @@
 
 [node name="Trash Objects" type="Node2D"]
 
-[node name="Trash" parent="." instance=ExtResource("1_di5ku")]
-position = Vector2(65, -140)
+[node name="TrashCluster" type="Node2D" parent="."]
 
-[node name="Trash2" parent="." instance=ExtResource("1_di5ku")]
-position = Vector2(120, -102)
+[node name="Trash" parent="TrashCluster" instance=ExtResource("1_di5ku")]
+position = Vector2(272, -123)
 
-[node name="Trash5" parent="." instance=ExtResource("1_di5ku")]
-position = Vector2(178, -54)
+[node name="Trash2" parent="TrashCluster" instance=ExtResource("1_di5ku")]
+position = Vector2(327, -85)
 
-[node name="Trash6" parent="." instance=ExtResource("1_di5ku")]
-position = Vector2(240, -67)
+[node name="Trash5" parent="TrashCluster" instance=ExtResource("1_di5ku")]
+position = Vector2(385, -37)
 
-[node name="Trash3" parent="." instance=ExtResource("1_di5ku")]
-position = Vector2(145, -158)
+[node name="Trash6" parent="TrashCluster" instance=ExtResource("1_di5ku")]
+position = Vector2(447, -50)
 
-[node name="Trash4" parent="." instance=ExtResource("1_di5ku")]
-position = Vector2(206, -132)
+[node name="Trash3" parent="TrashCluster" instance=ExtResource("1_di5ku")]
+position = Vector2(352, -141)
+
+[node name="Trash4" parent="TrashCluster" instance=ExtResource("1_di5ku")]
+position = Vector2(413, -115)
+
+[node name="TrashCluster2" type="Node2D" parent="."]
+position = Vector2(-1608, -404)
+
+[node name="Trash" parent="TrashCluster2" instance=ExtResource("1_di5ku")]
+position = Vector2(272, -123)
+
+[node name="Trash2" parent="TrashCluster2" instance=ExtResource("1_di5ku")]
+position = Vector2(327, -85)
+
+[node name="Trash5" parent="TrashCluster2" instance=ExtResource("1_di5ku")]
+position = Vector2(385, -37)
+
+[node name="Trash6" parent="TrashCluster2" instance=ExtResource("1_di5ku")]
+position = Vector2(447, -50)
+
+[node name="Trash3" parent="TrashCluster2" instance=ExtResource("1_di5ku")]
+position = Vector2(352, -141)
+
+[node name="Trash4" parent="TrashCluster2" instance=ExtResource("1_di5ku")]
+position = Vector2(413, -115)
 
 [node name="Trash21" parent="." instance=ExtResource("1_di5ku")]
-position = Vector2(1553, -404)
+position = Vector2(1689, -455)
 
 [node name="Trash22" parent="." instance=ExtResource("1_di5ku")]
-position = Vector2(1608, -366)
+position = Vector2(1744, -417)
 
 [node name="Trash23" parent="." instance=ExtResource("1_di5ku")]
-position = Vector2(1666, -318)
+position = Vector2(1802, -369)
 
 [node name="Trash24" parent="." instance=ExtResource("1_di5ku")]
-position = Vector2(1728, -331)
+position = Vector2(1864, -382)
 
 [node name="Trash25" parent="." instance=ExtResource("1_di5ku")]
-position = Vector2(1633, -422)
+position = Vector2(1769, -473)
 
 [node name="Trash26" parent="." instance=ExtResource("1_di5ku")]
-position = Vector2(1694, -396)
+position = Vector2(1830, -447)
 
 [node name="Trash27" parent="." instance=ExtResource("1_di5ku")]
 position = Vector2(1830, -76)
@@ -59,13 +82,13 @@ position = Vector2(1910, -94)
 position = Vector2(1971, -68)
 
 [node name="Trash13" parent="." instance=ExtResource("1_di5ku")]
-position = Vector2(668, -382)
+position = Vector2(812, -410)
 
 [node name="Trash14" parent="." instance=ExtResource("1_di5ku")]
-position = Vector2(617, -458)
+position = Vector2(761, -486)
 
 [node name="Trash15" parent="." instance=ExtResource("1_di5ku")]
-position = Vector2(765, -348)
+position = Vector2(909, -376)
 
 [node name="Trash7" parent="." instance=ExtResource("1_di5ku")]
 position = Vector2(-382, 167)
@@ -77,7 +100,7 @@ position = Vector2(-282, 199)
 position = Vector2(-370, 220)
 
 [node name="Trash10" parent="." instance=ExtResource("1_di5ku")]
-position = Vector2(-278, 271)
+position = Vector2(-450, 103)
 
 [node name="Trash11" parent="." instance=ExtResource("1_di5ku")]
 position = Vector2(-371, 77)
@@ -86,16 +109,16 @@ position = Vector2(-371, 77)
 position = Vector2(-316, 136)
 
 [node name="Trash16" parent="." instance=ExtResource("1_di5ku")]
-position = Vector2(-2628, -134)
+position = Vector2(-2580, 14)
 
 [node name="Trash17" parent="." instance=ExtResource("1_di5ku")]
-position = Vector2(-2528, -102)
+position = Vector2(-2480, 46)
 
 [node name="Trash18" parent="." instance=ExtResource("1_di5ku")]
-position = Vector2(-2616, -81)
+position = Vector2(-2568, 67)
 
 [node name="Trash19" parent="." instance=ExtResource("1_di5ku")]
-position = Vector2(-2617, -224)
+position = Vector2(-2569, -76)
 
 [node name="Trash20" parent="." instance=ExtResource("1_di5ku")]
-position = Vector2(-2562, -165)
+position = Vector2(-2514, -17)

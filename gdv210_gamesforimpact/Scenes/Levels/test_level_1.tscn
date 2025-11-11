@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://5tlnhor62a8w"]
+[gd_scene load_steps=9 format=3 uid="uid://5tlnhor62a8w"]
 
 [ext_resource type="Script" path="res://Scripts/Levels/test_level_1.gd" id="1_nliob"]
 [ext_resource type="PackedScene" uid="uid://bqdcw1280c2sh" path="res://Scenes/Player/Player.tscn" id="2_etki2"]
 [ext_resource type="PackedScene" uid="uid://rbmwgrae2ag0" path="res://Scenes/Levels/TileMap.tscn" id="2_ymnpm"]
 [ext_resource type="PackedScene" uid="uid://hu7s8u6h06jo" path="res://UI/UI.tscn" id="3_lpows"]
+[ext_resource type="PackedScene" uid="uid://bdpq5hqplbj81" path="res://Scenes/Levels/Trash Layouts/level1_trash_layout.tscn" id="5_6q8q1"]
 [ext_resource type="PackedScene" uid="uid://prap108ity0q" path="res://Scenes/Entities/Shell.tscn" id="5_fxido"]
 [ext_resource type="PackedScene" uid="uid://bfg48j01vd0uq" path="res://Scenes/Levels/Other/out_of_water_area.tscn" id="6_ie2m4"]
 [ext_resource type="PackedScene" uid="uid://gk3guqkqijgb" path="res://Scenes/Levels/Other/underwater_effect_filter.tscn" id="7_517i5"]
@@ -16,13 +17,16 @@ script = ExtResource("1_nliob")
 script = null
 
 [node name="Player" parent="." instance=ExtResource("2_etki2")]
+position = Vector2(-38, -47)
 
 [node name="UI" parent="." instance=ExtResource("3_lpows")]
+
+[node name="Trash Objects" parent="." instance=ExtResource("5_6q8q1")]
 
 [node name="Shell Objects" type="Node2D" parent="."]
 
 [node name="Shell" parent="Shell Objects" instance=ExtResource("5_fxido")]
-position = Vector2(-529, -56)
+position = Vector2(-477, -56)
 
 [node name="Shell2" parent="Shell Objects" instance=ExtResource("5_fxido")]
 position = Vector2(751, -463)
