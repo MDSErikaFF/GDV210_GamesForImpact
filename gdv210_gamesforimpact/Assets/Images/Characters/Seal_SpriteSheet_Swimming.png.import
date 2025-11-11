@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bcawmp7cufhka"
-path="res://.godot/imported/Ship 1.png-654180aadea4694e73c1607a9b0c885f.ctex"
+uid="uid://b5uu7ntp57aha"
+path="res://.godot/imported/Seal_SpriteSheet_Swimming.png-73b4dfcaa38d35159428f121fd8cdc41.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Ship 1.png"
-dest_files=["res://.godot/imported/Ship 1.png-654180aadea4694e73c1607a9b0c885f.ctex"]
+source_file="res://Assets/Images/Characters/Seal_SpriteSheet_Swimming.png"
+dest_files=["res://.godot/imported/Seal_SpriteSheet_Swimming.png-73b4dfcaa38d35159428f121fd8cdc41.ctex"]
 
 [params]
 

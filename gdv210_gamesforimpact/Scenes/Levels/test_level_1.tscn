@@ -218,7 +218,6 @@ position = Vector2(1025, 205)
 position = Vector2(0, -849)
 
 [node name="Underwater Effect Filter" parent="." instance=ExtResource("7_517i5")]
-visible = false
 
 [connection signal="body_entered" from="OutOfWater" to="Player" method="_on_out_of_water_body_entered"]
 [connection signal="body_exited" from="OutOfWater" to="Player" method="_on_out_of_water_body_exited"]

@@ -1,5 +1,8 @@
 extends Node2D
 
+@onready var vacuumEndPoint = $VacuumTexture2/endPoint
+@onready var vacuumRangeCollisoon = $VacuumTexture2/endPoint/vacuumArea2D/CollisionPolygon2D
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -9,13 +12,14 @@ func _ready():
 func _process(delta):
 	if Input.is_action_pressed("LeftClick"):
 		GameManager.CurrentlyVacuum = true
-		GameManager.targetVacuumMarker = $VacuumTexture/endPoint.global_position
+		GameManager.targetVacuumMarker = vacuumEndPoint.global_position
 	else:
 		GameManager.CurrentlyVacuum = false
 	
-	get_node("VacuumTexture").look_at(get_global_mouse_position())
-	$VacuumTexture/endPoint/vacuumArea2D/CollisionPolygon2D.scale.x = GameManager.VacuumSizeLevel
-	$VacuumTexture/endPoint/vacuumArea2D/CollisionPolygon2D.scale.y = GameManager.VacuumSizeLevel
+	#get_node("VacuumTexture2").look_at(get_global_mouse_position())
+	look_at(get_global_mouse_position())
+	vacuumRangeCollisoon.scale.x = GameManager.VacuumSizeLevel
+	vacuumRangeCollisoon.scale.y = GameManager.VacuumSizeLevel
 	if Input.is_action_just_pressed("ui_page_up"):
 		if GameManager.VacuumSizeLevel <= GameManager.VacuumMaxSizeLevel:
 			GameManager.VacuumSizeLevel += 0.1
@@ -28,4 +32,4 @@ func _on_vacuum_area_2d_area_entered(area):
 		print("Vacuum trash")
 
 func LevelUpVacuum():
-	$VacuumTexture/endPoint/vacuumArea2D/CollisionPolygon2D.scale *= GameManager.VacuumSizeLevel
+	vacuumRangeCollisoon.scale *= GameManager.VacuumSizeLevel

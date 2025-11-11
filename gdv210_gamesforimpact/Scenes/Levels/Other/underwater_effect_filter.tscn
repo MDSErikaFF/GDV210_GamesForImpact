@@ -8,7 +8,7 @@ shader_parameter/wave_strength = 9.032
 shader_parameter/wave_speed = 1.544
 shader_parameter/distortion_strength = 0.002
 shader_parameter/water_tint = Color(0, 0.4, 0.6, 0.25)
-shader_parameter/blur_amount = 0.004
+shader_parameter/blur_amount = 0.0
 
 [node name="Underwater Effect Filter" type="ColorRect"]
 material = SubResource("ShaderMaterial_4hlw7")

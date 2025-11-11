@@ -21,6 +21,17 @@ var input = Vector2.ZERO
 
 var last_angle = 0.0;
 
+
+enum PlayState
+{
+	
+	STATE_FREE_MOVEMENT,
+	STATE_FREEZE,
+	
+}
+
+var current_state = PlayState.STATE_FREE_MOVEMENT
+
 func _ready():
 	# Find all 'out_of_water_area' nodes in the scene
 	for area in get_tree().get_nodes_in_group("OutOfWaterArea"):
@@ -30,6 +41,35 @@ func _ready():
 func _physics_process(delta):
 	get_input()
 	
+	
+	if GameManager.inShop == true:
+		current_state = PlayState.STATE_FREEZE;
+	else:
+		current_state = PlayState.STATE_FREE_MOVEMENT
+	
+	if current_state == PlayState.STATE_FREE_MOVEMENT:
+		player_movement(delta)
+	elif current_state == PlayState.STATE_FREEZE:
+		velocity = Vector2.ZERO;
+		rotation = 90;
+
+	
+	move_and_slide()
+
+
+func connect_out_of_water_signals(area: Area2D):
+	if not area.body_entered.is_connected(_on_out_of_water_body_entered):
+		area.body_entered.connect(_on_out_of_water_body_entered)
+	if not area.body_exited.is_connected(_on_out_of_water_body_exited):
+		area.body_exited.connect(_on_out_of_water_body_exited)
+
+func get_input():
+	input.x = int(Input.is_action_pressed("Right")) - int(Input.is_action_pressed("Left"))
+	input.y = int(Input.is_action_pressed("Down")) - int(Input.is_action_pressed("Up"))
+	input = input.normalized()
+
+
+func player_movement(delta):
 	if in_water:
 		current_gravity = 0.0
 		vertical_velocity = 0.0
@@ -58,20 +98,6 @@ func _physics_process(delta):
 	
 	last_angle = target_angle
 	rotation = lerp_angle(rotation, target_angle, rotation_speed * delta)
-	
-	move_and_slide()
-
-
-func connect_out_of_water_signals(area: Area2D):
-	if not area.body_entered.is_connected(_on_out_of_water_body_entered):
-		area.body_entered.connect(_on_out_of_water_body_entered)
-	if not area.body_exited.is_connected(_on_out_of_water_body_exited):
-		area.body_exited.connect(_on_out_of_water_body_exited)
-
-func get_input():
-	input.x = int(Input.is_action_pressed("Right")) - int(Input.is_action_pressed("Left"))
-	input.y = int(Input.is_action_pressed("Down")) - int(Input.is_action_pressed("Up"))
-	input = input.normalized()
 
 
 func _on_out_of_water_body_entered(body):
