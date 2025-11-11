@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://gk3guqkqijgb" path="res://Scenes/Levels/Other/underwater_effect_filter.tscn" id="7_517i5"]
 
 [node name="TestLevel2" type="Node2D"]
+texture_filter = 1
 script = ExtResource("1_nliob")
 
 [node name="TileMap" parent="." instance=ExtResource("2_ymnpm")]
