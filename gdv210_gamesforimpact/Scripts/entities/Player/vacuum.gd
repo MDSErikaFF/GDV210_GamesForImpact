@@ -11,11 +11,15 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if Input.is_action_pressed("LeftClick"):
-		GameManager.CurrentlyVacuum = true
+		if not GameManager.CurrentlyVacuum:
+			GameManager.CurrentlyVacuum = true
+			SoundManager.play_vacuum_sfx()  
 		GameManager.targetVacuumMarker = vacuumEndPoint.global_position
 	else:
-		GameManager.CurrentlyVacuum = false
-	
+		if GameManager.CurrentlyVacuum:
+			GameManager.CurrentlyVacuum = false
+			SoundManager.stop_vacuum_sfx()  
+#	
 	#get_node("VacuumTexture2").look_at(get_global_mouse_position())
 	look_at(get_global_mouse_position())
 	vacuumRangeCollisoon.scale.x = GameManager.VacuumSizeLevel

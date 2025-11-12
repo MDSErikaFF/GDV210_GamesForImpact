@@ -19,12 +19,16 @@ position = Vector2(4, 8)
 rotation = 0.488692
 scale = Vector2(0.51898, 0.486007)
 texture = ExtResource("3_x7j84")
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
 
 [node name="endPoint" type="Marker2D" parent="VacuumTexture2"]
 position = Vector2(28.9223, -16.4216)
 rotation = -0.516393
 scale = Vector2(0.703089, 0.76106)
 skew = 0.0544049
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
 
 [node name="vacuumArea2D" type="Area2D" parent="VacuumTexture2/endPoint"]
 position = Vector2(-62, 1)
