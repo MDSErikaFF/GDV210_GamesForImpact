@@ -159,10 +159,10 @@ position = Vector2(1653, 252)
 position = Vector2(-477, -56)
 
 [node name="Shell2" parent="Shell Objects" instance=ExtResource("5_fxido")]
-position = Vector2(751, -463)
+position = Vector2(3052, -239)
 
 [node name="Shell3" parent="Shell Objects" instance=ExtResource("5_fxido")]
-position = Vector2(1025, 205)
+position = Vector2(1524, 210)
 
 [node name="OutOfWater" parent="." instance=ExtResource("6_ie2m4")]
 position = Vector2(0, -849)

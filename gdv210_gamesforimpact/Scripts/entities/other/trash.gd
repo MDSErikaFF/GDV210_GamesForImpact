@@ -58,6 +58,7 @@ func _process(delta):
 		#idle water movement for trash here
 		var wave = Vector2(sin(Time.get_ticks_msec() * 0.005) * 5, 0)
 		global_position += wave * delta
+		has_reached_target = false;
 	
 	move_and_slide()
 
