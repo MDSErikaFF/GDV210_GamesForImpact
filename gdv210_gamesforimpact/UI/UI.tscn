@@ -334,6 +334,7 @@ size_flags_horizontal = 4
 text = "BUY"
 
 [node name="NextLevelButton" type="Button" parent="ShopUI/Panel"]
+visible = false
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 offset_left = 41.96
@@ -356,9 +357,9 @@ horizontal_alignment = 1
 [node name="LeaveShopButton" type="Button" parent="ShopUI/Panel"]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
-offset_left = 205.96
+offset_left = 116.96
 offset_top = 195.0
-offset_right = 337.96
+offset_right = 248.96
 offset_bottom = 225.0
 size_flags_horizontal = 4
 text = "Leave Shop"

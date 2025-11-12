@@ -35,6 +35,7 @@ func _process(delta):
 func _on_vacuum_area_2d_area_entered(area):
 	if GameManager.CurrentlyVacuum == true:
 		print("Vacuum trash")
+		
 
 func LevelUpVacuum():
 	vacuumRangeCollisoon.scale *= GameManager.VacuumSizeLevel

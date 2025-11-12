@@ -75,4 +75,5 @@ func on_target_reached():
 	if GameManager.TrashCollected <= GameManager.MaxTrashStorage - 1:
 		GameManager.TrashCollected += 1 #adds the number to the backpack
 		print("Trash amount collected: ", GameManager.TrashCollected)
+		SoundManager.play_pickup_sfx();
 		queue_free() #then removes the object

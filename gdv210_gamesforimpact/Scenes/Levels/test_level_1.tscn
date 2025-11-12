@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://5tlnhor62a8w"]
+[gd_scene load_steps=10 format=3 uid="uid://5tlnhor62a8w"]
 
 [ext_resource type="Script" path="res://Scripts/Levels/test_level_1.gd" id="1_nliob"]
 [ext_resource type="PackedScene" uid="uid://bqdcw1280c2sh" path="res://Scenes/Player/Player.tscn" id="2_etki2"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bdpq5hqplbj81" path="res://Scenes/Levels/Trash Layouts/level1_trash_layout.tscn" id="5_6q8q1"]
 [ext_resource type="PackedScene" uid="uid://prap108ity0q" path="res://Scenes/Entities/Shell.tscn" id="5_fxido"]
 [ext_resource type="PackedScene" uid="uid://bfg48j01vd0uq" path="res://Scenes/Levels/Other/out_of_water_area.tscn" id="6_ie2m4"]
+[ext_resource type="PackedScene" uid="uid://dmc1xgtiou53n" path="res://Scenes/Entities/trash.tscn" id="6_q73tg"]
 [ext_resource type="PackedScene" uid="uid://gk3guqkqijgb" path="res://Scenes/Levels/Other/underwater_effect_filter.tscn" id="7_517i5"]
 
 [node name="TestLevel2" type="Node2D"]
@@ -15,13 +16,142 @@ script = ExtResource("1_nliob")
 
 [node name="TileMap" parent="." instance=ExtResource("2_ymnpm")]
 script = null
+metadata/_edit_lock_ = true
 
 [node name="Player" parent="." instance=ExtResource("2_etki2")]
-position = Vector2(-38, -47)
+position = Vector2(-3081, 118)
 
 [node name="UI" parent="." instance=ExtResource("3_lpows")]
 
 [node name="Trash Objects" parent="." instance=ExtResource("5_6q8q1")]
+
+[node name="TrashCluster2" parent="Trash Objects" index="1"]
+position = Vector2(-1288, -537)
+metadata/_edit_group_ = true
+
+[node name="Trash" parent="Trash Objects/TrashCluster2" index="0"]
+position = Vector2(-98, -29)
+
+[node name="Trash2" parent="Trash Objects/TrashCluster2" index="1"]
+position = Vector2(-43, 9)
+
+[node name="Trash5" parent="Trash Objects/TrashCluster2" index="2"]
+position = Vector2(15, 57)
+
+[node name="Trash6" parent="Trash Objects/TrashCluster2" index="3"]
+position = Vector2(77, 44)
+
+[node name="Trash3" parent="Trash Objects/TrashCluster2" index="4"]
+position = Vector2(-18, -47)
+
+[node name="Trash4" parent="Trash Objects/TrashCluster2" index="5"]
+position = Vector2(43, -21)
+
+[node name="TrashCluster5" type="Node2D" parent="Trash Objects"]
+position = Vector2(-1177, 136)
+
+[node name="Trash" parent="Trash Objects/TrashCluster5" instance=ExtResource("6_q73tg")]
+position = Vector2(-231, -6)
+
+[node name="Trash2" parent="Trash Objects/TrashCluster5" instance=ExtResource("6_q73tg")]
+position = Vector2(-136, 64)
+
+[node name="Trash5" parent="Trash Objects/TrashCluster5" instance=ExtResource("6_q73tg")]
+position = Vector2(105, 21)
+
+[node name="Trash6" parent="Trash Objects/TrashCluster5" instance=ExtResource("6_q73tg")]
+position = Vector2(-33, 65)
+
+[node name="Trash3" parent="Trash Objects/TrashCluster5" instance=ExtResource("6_q73tg")]
+position = Vector2(-84, -40)
+
+[node name="Trash4" parent="Trash Objects/TrashCluster5" instance=ExtResource("6_q73tg")]
+position = Vector2(158, -57)
+
+[node name="TrashCluster3" type="Node2D" parent="Trash Objects"]
+position = Vector2(-1893, 88)
+metadata/_edit_group_ = true
+
+[node name="Trash" parent="Trash Objects/TrashCluster3" instance=ExtResource("6_q73tg")]
+position = Vector2(-98, -29)
+
+[node name="Trash2" parent="Trash Objects/TrashCluster3" instance=ExtResource("6_q73tg")]
+position = Vector2(-43, 9)
+
+[node name="Trash5" parent="Trash Objects/TrashCluster3" instance=ExtResource("6_q73tg")]
+position = Vector2(15, 57)
+
+[node name="Trash6" parent="Trash Objects/TrashCluster3" instance=ExtResource("6_q73tg")]
+position = Vector2(77, 44)
+
+[node name="Trash3" parent="Trash Objects/TrashCluster3" instance=ExtResource("6_q73tg")]
+position = Vector2(-18, -47)
+
+[node name="Trash4" parent="Trash Objects/TrashCluster3" instance=ExtResource("6_q73tg")]
+position = Vector2(43, -21)
+
+[node name="TrashCluster4" type="Node2D" parent="Trash Objects"]
+position = Vector2(-3059, -592)
+
+[node name="Trash" parent="Trash Objects/TrashCluster4" instance=ExtResource("6_q73tg")]
+position = Vector2(38, 217)
+
+[node name="Trash2" parent="Trash Objects/TrashCluster4" instance=ExtResource("6_q73tg")]
+position = Vector2(-143, 59)
+
+[node name="Trash5" parent="Trash Objects/TrashCluster4" instance=ExtResource("6_q73tg")]
+position = Vector2(-106, 223)
+
+[node name="Trash6" parent="Trash Objects/TrashCluster4" instance=ExtResource("6_q73tg")]
+position = Vector2(77, -35)
+
+[node name="Trash3" parent="Trash Objects/TrashCluster4" instance=ExtResource("6_q73tg")]
+position = Vector2(-80, -34)
+
+[node name="Trash4" parent="Trash Objects/TrashCluster4" instance=ExtResource("6_q73tg")]
+position = Vector2(9, 32)
+
+[node name="Trash39" parent="Trash Objects" instance=ExtResource("6_q73tg")]
+position = Vector2(2789, -257)
+
+[node name="Trash40" parent="Trash Objects" instance=ExtResource("6_q73tg")]
+position = Vector2(2889, -207)
+
+[node name="Trash41" parent="Trash Objects" instance=ExtResource("6_q73tg")]
+position = Vector2(2997, -176)
+
+[node name="Trash42" parent="Trash Objects" instance=ExtResource("6_q73tg")]
+position = Vector2(3087, -196)
+
+[node name="Trash45" parent="Trash Objects" instance=ExtResource("6_q73tg")]
+position = Vector2(3068, 214)
+
+[node name="Trash46" parent="Trash Objects" instance=ExtResource("6_q73tg")]
+position = Vector2(3151, 104)
+
+[node name="Trash43" parent="Trash Objects" instance=ExtResource("6_q73tg")]
+position = Vector2(2940, -296)
+
+[node name="Trash44" parent="Trash Objects" instance=ExtResource("6_q73tg")]
+position = Vector2(3120, -277)
+
+[node name="Trash33" parent="Trash Objects" instance=ExtResource("6_q73tg")]
+position = Vector2(1486, 238)
+
+[node name="Trash34" parent="Trash Objects" instance=ExtResource("6_q73tg")]
+position = Vector2(1577, 272)
+
+[node name="Trash35" parent="Trash Objects" instance=ExtResource("6_q73tg")]
+position = Vector2(1885, 236)
+
+[node name="Trash36" parent="Trash Objects" instance=ExtResource("6_q73tg")]
+position = Vector2(1779, 267)
+
+[node name="Trash37" parent="Trash Objects" instance=ExtResource("6_q73tg")]
+position = Vector2(1538, 128)
+
+[node name="Trash38" parent="Trash Objects" instance=ExtResource("6_q73tg")]
+position = Vector2(1653, 252)
 
 [node name="Shell Objects" type="Node2D" parent="."]
 
@@ -38,7 +168,9 @@ position = Vector2(1025, 205)
 position = Vector2(0, -849)
 
 [node name="Underwater Effect Filter" parent="." instance=ExtResource("7_517i5")]
-visible = false
+metadata/_edit_lock_ = true
 
 [connection signal="body_entered" from="OutOfWater" to="Player" method="_on_out_of_water_body_entered"]
 [connection signal="body_exited" from="OutOfWater" to="Player" method="_on_out_of_water_body_exited"]
+
+[editable path="Trash Objects"]

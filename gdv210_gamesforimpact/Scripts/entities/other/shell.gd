@@ -17,4 +17,5 @@ func _on_shell_object_area_2d_body_entered(body: Node2D) -> void:
 	print("Collision with ", body.name)
 	if body.name == "Player":
 		GameManager.ShellsCollected += 1
+		SoundManager.play_pickup_shell_sfx()
 		queue_free()
